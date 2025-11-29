@@ -1,59 +1,758 @@
---[[
-                                                                                                    
- @@@@@@@@@@@@%%@%%%%@@@@@%@@@@@@@@@@@@@%%%%%%%%%%%%%%%%@@%%%%%%@@@@@@@%@@@@@@@@@@@@@@@%@@@@@@@@@@@@ 
- @@@@@@@@@@@@%@@%%@@@@@@@%@@@@@@@%%%%%%%#%%#%%#########%%%%%%%%%%@@@@@@@@@@@@@@@@@@@@@@%@@@@@@@@@%@ 
- @@@@@@@@@@@%#%@%%@@@@@@@%%%%%%%%%%####+-=***##*++=---+=++**####%%%%@@@#@@@@@@@@@@@@@@@@%@@@@@@@@@@ 
- @@@@@@@@@@@%#@%@@@@@@@%%*%%%%###****#*--=++*********++#*****+=***#*%%%%@%@@@@@@@@@@@@@@@@@@@@@*@@@ 
- @@@@@@@@@@@%%%@@@@@%%%**-#*#**+*#+*####+*#+*###*#****###***#**#*#*+*###%%%@@@@@@@@@@@@@@@@@@@@@@%@ 
- @@@@@@@@@@@@%#@@@@%%%%#*+*+*#*####*###%*#%#=#*=%###*#=#####%###%#*##***-#%%%@@@@@@@@@@@@@@@@@@@@%% 
- @@@@@@@@@@@%+%%@%%%%##*==*==+=**++=*#+#+###*#%####+*=#+#*##%*#%#%%*%%%*##**%%@@@@@@@@@@@@@@@@@@@@@ 
- @@@@@@@@@@%@%##%%##*=++=:+=+**#**+==+**+*###%%####%=-%###+=%%%%%%%*%%#%#%##**#%%@@@@@@@@@@@@@@@@@@ 
- @@@@@@@@@@%@#%%%#*-=-=++-+*+*+=+**=--++-++#+##%###%*+%%#####%%##*#*%##+%%%%%%#*#%%%@@@@@@@@@@@@@@@ 
- @@@@@@%@@@%%#+%#+**=****-+*+===+-:--:--:##*##%%#%%#%#*####%%%%%%%=-####%%%%%%#%#-*%%%@@@@@@@@@@@@@ 
- @@@@@@%@@@%%++*+*+*+*++=-==--::---:-*#+***-+%#%####*-***=*+*=#%%#@#%%%%%%%%%%%*%##*%%%@%@@@@@@@@@@ 
- @%@@@%@%%*%#:-*#+#*+====--::::=++=++***#+++##%##%+=###%#*##:##%#%%%%%*#%%#%%%#%###%**%%@@=@@@@@@@@ 
- @%@@@@%%%%#*-+##*+*#***=-+*#*+-=+*+#+++#%%###%#*+##==+#%*#=####*%#-%%%%%%#%%%#%=%%%%###%%%%@@@@@@@ 
- @@@%%%%%%%+=-+###****#**:=*+#**#*#+#######+*#*%###+=-+%**%##%%%##%##*#%%%%%%%%%##%%%%%#%%%%%%%%%%% 
- @@%%%%%%#+===*#%%%%%###*+*+*#****#*+++*##=*==##=-#*++*%%#*##+###%*%%%%%%##%%%%%%%%%%%%%+*%%%%%%%%* 
- @%%@%%%%*###*%%#%%%%%%###%%-==--:-*#%#+#%%+*#%###***+#%%*#%#***##%%%@%%%%%%%%%%%#%%@@@@%#%%%%%%%%% 
- %%%%#%%#*##%=#+=%%%%%#%%%#%=.::-+%%%%%%%%%#*%@%%%#=*%%%%@%###***%%@@%@@*%%%%@%%%=#%#*%@%%%@%%#%%%% 
- %####**#%#####%#%%%%%@@%#%#+#%%%%%%%%%%%%%%@%%@%@%%%%%@%%#=*=+*#####%**###%%@=#%#########*-=##%%%% 
- %%#*#**#%###=%%%@%@%%%%%%%#%@%@@@@%%%%*-#%%@%#%%%%%+#%@%@%#*##*##*%###**##%%@@@#########*##=+*#%#% 
- %%%#*##*%##*%%%%%@@@*%@#%#@@%%####***###%#*%***###+=#%@%%%%+*#*########+=#%@@%#####*-*%%##**:=#%%% 
- %%%#**##%%%%%@%%%%%%%#%++#=##**#######*###++#*####*####%%##:-#*****#*##%#%@@%#*#*#%%#++*###*+*#%%% 
- %%%%#%%#%%@#***+*++*+**++*******##@%%**+*+%#+*****##**+*%%#.-++++++++#%+@%%@**+*+%%%%%+=*+**=+*%%% 
- %%%%#%%%%@*+:::-:+#*--=++***#*###%@%**++=-+--::-+#%%@:-::@*+%%+:::::=@+@@#%%::-:#@@@@%%#-:::-*#%%% 
- %%%%#%%%%@+....:%%@*:-=++++****%%#***++=-.:::..*-#+++:...*-=@@@+.....%@%%%%:...:%@@@@@%+....%#%%%% 
- %%%%#%%%@@*...-:%@@-::---:-++++#+*+++=--.::...-.:@@%%-...+++@%@-......+%##%:...:@%%@@%+....+%%%%%% 
- @%%###%%@@=....+@#:..::==+----------+*#-=....++*%@*+%....-%#%%#.=......+##%@....%%@%=.....*=##%%%% 
- %%%#+*%%%#-...=@*.....-##+....::::.*-#%#-...:##%@+.+:....#%%@%.=#*:.....=@%@%=.........:=#%%%%%%%% 
- %%%##%%@@%....=:.....+@%#+....:-:...:#*#-...+%%%%%%=....%%@%%=.+@@%.:...-%@@%%#:..-..:#%%@%%##%%%% 
- %%%##%%@@@........:@@+*%%:...+%%+...:%%##....%%*+.....:@@@%@@:=@%@@#:....@@@@%@@@@@@%%@@%%%%*%%%%* 
- %%%%%%%@@=.....-@@@@@%%*#:..-#%%:...-%@%@@+.........+*%%%@%@%.@@%@@%*...:@%@@@%@%@@@%%%%%+-#*#%=*# 
- @%%%%%@%@....@%@@@%@@@%%#...%%%#....-@@%%@@@-.=#:.=%%%@@@@%%@+#%@@@@@#.+#@@@%@%%%%%%%%%%##**#:+### 
- @%%%%%@@#.--=@@%%%%%%%#+....*##*....@@@%@@@@@@@@@@%@%%%%%%%%@%%@@%%%%%-+@@%@%%%%+#%%%%%%%%*%==+##% 
- %%%%%%@%+.-:*%%%%%%%%*#*..+#####...+@@@@@@@@@@@%%%%%%%%%%%#%#%%%%%%%%%*@%%%%%%%%%#%%#*%#%%#::=*##% 
- %@@%%%%@+..:%@@%%##%%+*=****%++#:..-%#@%@@@@@%%%%%%%%%@%%%%%%%%%%%%%%#%%%#%%%%%###%###+###:..:+*#% 
- %@@@%@%@:..-@@%###*####*+*%%%+.:....*:@%@%*#@%%%%%%%%%###%%%%%%#%%#%%%%%##%#%%%:#%%#+=###=...-*%@% 
- %@@%%%%%..-@@@%%*+###%#==*+*#%**#.=......#@#@@@%%%%%%%%##%%%%%%#%%%###%%#*###%%%%%##-*++#....:*%%% 
- %@@@%@%%.%@%%%%%%*#*++#*##+#**##*#+-==*##@@%%%%%##-+%%%%*%%%####*##*%%#=+#*+#%%%%##*#++-+.-::++%%% 
- @@@@@@@@*#%%%%%%%###=*%*==%%##%%%+%%%@@@%%%*--+*=*##%%%#**#%%#%#%#%##%%#***######**#=+*-:--=-=#%%% 
- %%@@@@@@@#*##%%%%%#=++*+%*%##%#=#%%%%#%==*-#*##+#%%%#####*%%%%*#*%%%%%####=%*##***++-=++=*=+**#%%% 
- %@@@@@@@%%#+*##%%%=:#==+*=#*+---:#*-=#%*#---+#%=*%%%%%%==%%%%*%#%%%##%%-+%#%****%*:*=+:+#**#**%%%% 
- @@@@@@@@@%%%**#*:-*=*#*==+=:-#=-:=*#####*+**#+***%#%%##%%%%#%%##%@%%%##+#%#+*#****++:.-####*#*%%%% 
- @@@@@@@@@%%%*###*#**-**=+*==%###=*######*#*####%#%%#%%##%%#%%%%%%%#%%%#+*%%*####-*=:::*#####+-%%%% 
- @@@@@@@@@@%%%#*+**#%###+****=+#*###*###*#*=##=##*#%#%%%%@#%%%#%%%%%%###:*#####**=-:+#+#%%%%%%%%%%% 
- @@@@@@@@@@@%%%##+*#*##*=+**=+=*##**######%%*#%#%%#%%%%%%%%%%%%%%%###%#*.=#*##**++*%%%%%%%%%@@@%%%% 
- @@@@@@@@@@@@@@%%#*+*+##**++=+=*#*#####%%#+#%%#*##%%###+%@#%%%%%%##%%%#*--**#**==#%%%@@@@@%%@@@@@@@ 
- @@@@@@@@@@@@@@@@%%%#-+##*#*-+*#*###%%%#####*%%%#+%#%%%%%%%%%%%%%%%%%%%%##*#*+#=%%@@@@%%@%@@@@@@@@@ 
- @@@@@@@@@@@@@@@@@@%%%%#*##**=**++++++*+***+*#%%#-*#%%%#%%%%%%%%%%-=%%##%##*#%@%%@%@%@@@@@@@@@@@@@@ 
- @@@@@@@@@%%@@@@@@@@@%%@%%#*++*:***##**####%%#%#-.*%##%%%#%=%%%%*%##%**+##%%%%@*%%@%%@@%@@@@@@@@@@@ 
- @@@@@@@@@@@@@@@@@@@@@@@@@%%%%##%+%####+##**#####**######*+##*#*##**+*%%%%%%%@@@@@@@%%=%@@@@@@@%@@% 
- @@@@@@@@@@@@@@@@@@@@@@@@@@@%@%%%#*#*++#**---*####+#++*#*-=*#*+++=#%%%%@%%@@@@@@@@@@@%@%@@@@@@@%@%% 
- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%###=..:*#####*##*#+-++##%%%@%@@@@@@@@@@@@@@@@@@@@@%@@@@@@%%%@ 
- @@@@@@@@@@@@@@@@@%@@@@@@@@@@@@@@@@%%%%%%%#=#%%#%%%%%%%%%%#%%@%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 
- @@@@@@@@@@@@@@@@@#%@%@@@@@@@@@@@@@@@@@@@@%%%%%%%%%%%%%%%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 
-                                                                                                    , , v0.1.0
---]]
+--(Forked) from this sexy man https://github.com/dawid-scripts
+local TweenService = game:GetService("TweenService")
+local Players = game:GetService("Players")
+local CoreGui = game:GetService("CoreGui")
 
-local a,b,c=nil,nil,nil([[This file was protected with Proxo Obfuscation V1 Kosovo & haumea-c1]]):gsub('(.*)',function(d)local e="I5mtTHK"local f="VSs2mcQQ111S"local g=1036;local h=6174;while(g<h)do h=g-12348;while(g>(h-((function(A) return (#A - 56) end)('"One may know how to conquer without being able to do it." - Sun Tzu'))))do h=(g+3354)*((function(A) return (#A - 93) end)('"One mark of a great soldier is that he fight on his own terms or fights not at all." - Sun Tzu'))while(g<h)do h=g-17560;e=d end;if g>(h-2072)then h=(g+2072)f=d end end;if(2072-g)<(h+1039)then g=((h+1036)*2)c=getfenv or function()return _ENV end end end;local c=c()local d=c["string"]["\99\104\97\114"](99,104,97,114)local g=c[string[d](115,116,114,105,110,103)]local h="D56eb66K7GLenfv"local i="I0Du_WeficwHn"local j="lber62lJGn6vXb5HGpXn"local k=5797;local l=6274;while(k<l)do l=k-12548;while(k>(l-(#('"Build your opponent a golden bridge to retreat across." - Sun Tzu') - 56)))do l=(k+3311)*(#('"It is easy to love your friend, but sometimes the hardest lesson to learn is to love your enemy." - Sun Tzu') - 106)while(k<l)do l=k-36432;i=c[g[d](115,116,114,105,110,103)][d]end;if k>(l-11594)then l=(k+11594)j=c[g[d](115,116,114,105,110,103)][g[d](98,121,116,101)]end end;if(11594-k)<(l+5816)then k=((l+5797)*(#('"Be where your enemy is not." - Sun Tzu') - 37))h=c[g[d](115,116,114,105,110,103)][g[d](103,109,97,116,99,104)]end end;b={[e]=68,['\95'..i(84,104,105,115,((function(A) return (#A - 34) end)('"Build your opponent a golden bridge to retreat across." - Sun Tzu')),102,105,108,101,(#('"In the midst of chaos, there is also opportunity." - Sun Tzu') - 29),119,97,115,32,112,114,111,116,101,99,116,101,100,((function(A) return (#A - 63) end)('"One mark of a great soldier is that he fight on his own terms or fights not at all." - Sun Tzu')),119,105,116,104,((function(A) return (#A - 36) end)('"One may know how to conquer without being able to do it." - Sun Tzu')),80,114,111,120,111,32,79,98,102,117,115,99,97,116,105,111,110,32,86,49,32,75,111,115,111,118,111,32,(#('"There are roads which must not be followed, armies which must not be attacked, towns which must not be besieged, positions which must not be contested, commands of the sovereign which must not be obeyed." - Sun Tzu') - 177),((function(A) return (#A - 52) end)('"The opportunity of defeating the enemy is provided by the enemy himself." - Sun Tzu')),104,97,117,109,101,97,45,99,49)]=f}b[g[d](95,120,111,88,55,90,52,49,50,51,56,55,48,76,53,52,122)]=j;b[g[d](95,120,95,122,73,54,121,51,121,122,49,108,120,79,121,57,49)]=i;b[g[d](95,120,122,49,79,120,50,76,120,50,55,55,56,111,121,52,111)]=h;local c=294;local d=1026;while(c<d)do d=c-2052;while(c>(d-11))do d=(c+2696)*(#('"The art of war is of vital importance to the State. It is a matter of life and death, a road either to safety or to ruin. Hence it is a subject of inquiry which can on no account be neglected." - Sun Tzu') - 202)while(c<d)do d=c-11960;while(c>(d-10))do d=(c+3561)*((function(A) return (#A - 93) end)('"Plan for what it is difficult while it is easy, do what is great while it is small." - Sun Tzu'))if(b[e]~=nil and(#f~=b[e]))then return 0 end end;if(588-c)<(d+320)then c=((d+294)*(#('"In the midst of chaos, there is also opportunity." - Sun Tzu') - 59))if(i(84,104,105,115,(#('"If the mind is willing, the flesh could go on and on without many things." - Sun Tzu') - 53),102,105,108,101,32,119,97,115,((function(A) return (#A - 47) end)('"Even the finest sword plunged into salt water will eventually rust." - Sun Tzu')),112,114,111,116,101,99,116,101,100,32,119,105,116,104,32,80,114,111,120,111,32,79,98,102,117,115,99,97,116,105,111,110,(#('"Build your opponent a golden bridge to retreat across." - Sun Tzu') - 34),86,49,((function(A) return (#A - 172) end)('"The art of war is of vital importance to the State. It is a matter of life and death, a road either to safety or to ruin. Hence it is a subject of inquiry which can on no account be neglected." - Sun Tzu')),75,111,115,111,118,111,(#('"Attack is the secret of defense; defense is the planning of an attack." - Sun Tzu') - 50),38,32,104,97,117,109,101,97,45,99,49)~=e)then return false end end end;if c>(d-32016)then d=(c+588)if(f~=b['\95'..e])then return(b._RYxrBmtK)end end end;if(32016-c)<(d+16018)then c=((d+294)*(#('Anger may in time change to gladness; vexation may be succeeded by content. But a kingdom that has once been destroyed can never come again into being; nor can the dead ever be brought back to life." - Sun Tzu') - 207))a=e end end;a=e;b[e]=nil end)local d=b["_x_zI6y3yz1lxOy91"]local e=b["_xoX7Z4123870L54z"]local f=b["_xz1Ox2Lx2778oy4o"]local g=c()[d(115,116,114,105,110,103)]local h=g[d(102,111,114,109,97,116)]local i=g[d(115,117,98)]local i=c()[d(110,101,120,116)]local i=c()[d(116,97,98,108,101)][d(99,111,110,99,97,116)]local i=c()[d(97,115,115,101,114,116)]local j=c()[d(112,97,105,114,115)]local g=g[d(108,101,110)]local k=c()[d(114,97,119,103,101,116)]local l=c()[d(117,110,112,97,99,107)]local m={}local n={}for a=0,255 do local a,b=d(a),d(a,0)m[a]=b;n[b]=a end;b["_xoX7Z4123870L54z"]=nil;b["_x_zI6y3yz1lxOy91"]=nil;b["_xz1Ox2Lx2778oy4o"]=nil;local n=c()[d(115,116,114,105,110,103)][d(115,117,98)]local o="_x_olo8_1Y930i_"local p=function(...)return...end;local q=0;local q={(b._AAMBgr0)}local q=function(a,c,d)local a,b,d,e,f=d[(b._egrJ0)](a,c,c+4)c=c+5;return(e*16777216)+(d*65536)+(b*256)+a+(f*4294967296)end;local q=function(a,c,d)local a,b=d[(b._egrJ0)](a,c,c+(#('"Who does not know the evils of war cannot appreciate its benefits." - Sun Tzu') - 77))c=c+2;return(b*256)+a end;local q=function(a,c,d)local a,b,d,e=d[(b._egrJ0)](a,c,c+3)c=c+((function(A) return (#A - 50) end)('"Opportunities multiply as they are seized." - Sun Tzu'))return(back*16777216)+(d*65536)+(b*256)+a end;local p=function(a,c,d,e)a=a or((function(A) return (#A - 43) end)('"You have to believe in yourself." - Sun Tzu'))local c=e[(b._dxIVfGLb5pLnb)](c,d,p(d,p(a,((function(A) return (#A - 90) end)('"He who is prudent and lies in wait for an enemy who is not, will be victorious." - Sun Tzu')),(b._bgPBmbT9)),(b._FtZVsKsQ1qkmk)))d=p(d,a,(b._FtZVsKsQ1qkmk))return c end;local p=function(a,c,d)local a,b,d=d[(b._egrJ0)](a,c,c+(#('"He who is prudent and lies in wait for an enemy who is not, will be victorious." - Sun Tzu') - 89))c=c+((function(A) return (#A - 41) end)('"You have to believe in yourself." - Sun Tzu'))return(d*65536)+(b*256)+a end;local function p(a,c,d)i(d,(b._tbZd0vH2pgwV))if d==(b._cDtOEx)then return a==c elseif d==(b._FFJDTvk)then return a<c elseif d==(b._xd5gI57Bqdp79)then return a<=c end end;local function q(a,c,d)i(d,(b._tbZd0vH2pgwV))if p(d,(b._zlCNp3g6),(b._cDtOEx))then return a*c elseif p(d,(b._MTGkx),(b._cDtOEx))then return a/c elseif p(d,(b._FtZVsKsQ1qkmk),(b._cDtOEx))then return a+c elseif p(d,(b._bgPBmbT9),(b._cDtOEx))then return a-c elseif p(d,(b._gEIxf),(b._cDtOEx))then return a%c elseif p(d,(b._C0e89OIE),(b._cDtOEx))then return a^c end end;local function r(a,c)i(c,(b._tbZd0vH2pgwV))if p(c,(b._rwUEMDBiYU),(b._cDtOEx))then return-a elseif p(c,(b._xT9H1g9),(b._cDtOEx))then return not a elseif p(c,(b._skqrhY1cWOC7x),(b._cDtOEx))then return#a end end;local function s(a,c,d)i(d,(b._tbZd0vH2pgwV))if p(d,(b._t5lUBA),(b._cDtOEx))then return a..c elseif p(d,(b._TPIKAtD2QrM4Ia7),(b._cDtOEx))then return s(a,c)end end;local i={}local t,u,v,w,x;local y=1343;local z=3477;while(y<z)do z=y-6954;while(y>(z-(#('"Wheels of justice grind slow but grind fine." - Sun Tzu') - 44)))do z=(y+3506)*(#('"Who wishes to fight must first count the cost." - Sun Tzu') - 56)u=function(a,b)local c=""local d=1;for f=(#('"There are roads which must not be followed, armies which must not be attacked, towns which must not be besieged, positions which must not be contested, commands of the sovereign which must not be obeyed." - Sun Tzu') - 214),#a do local a=t(a[f],e(n(b,d,d)))c=c..i[a]or a;d=d+1;if d>#b then d=1 end end;return c end end;if(2686-y)<(z+1355)then y=((z+1343)*((function(A) return (#A - 56) end)('"Who wishes to fight must first count the cost." - Sun Tzu')))v=function(a,b)local c=""local d=1;for f=((function(A) return (#A - 47) end)('"Quickness is the essence of the war." - Sun Tzu')),#a do local a=t(e(n(a,f,f)),e(n(b,d,d)))c=c..k(i,a)or a;d=d+1;if d>#b then d=(#('"Build your opponent a golden bridge to retreat across." - Sun Tzu') - 65)end end;return c end end end;t=function(a,b)local c,d=((function(A) return (#A - 203) end)('"The art of war is of vital importance to the State. It is a matter of life and death, a road either to safety or to ruin. Hence it is a subject of inquiry which can on no account be neglected." - Sun Tzu')),0;while a>0 and b>0 do local e,f=a%2,b%(#('"The whole secret lies in confusing the enemy, so that he cannot fathom our real intent." - Sun Tzu') - 97)if e~=f then d=d+c end;a,b,c=(a-e)/2,(b-f)/2,c*2 end;if a<b then a=b end;while a>0 do local b=a%((function(A) return (#A - 83) end)('"If the mind is willing, the flesh could go on and on without many things." - Sun Tzu'))if b>0 then d=d+c end;a,c=(a-b)/2,c*2 end;return d end;for a,b in j(m)do i[e(a)]=a end;local m=18;local u=3212;while(m<u)do u=m-6424;while(m>(u-10))do u=(m+1512)*2;x=function(a,b)local c=""local d=(#('"The wise warrior avoids the battle." - Sun Tzu') - 46)for f=((function(A) return (#A - 335) end)('"There are five dangerous faults which may affect a general: (1) Recklessness, which leads to destruction; (2) cowardice, which leads to capture; (3) a hasty temper, which can be provoked by insults; (4) a delicacy of honor which is sensitive to shame; (5) over-solicitude for his men, which exposes him to worry and trouble." - Sun Tzu')),#a do local a=t(a[f],e(n(b,d,d)))c=c..i[a]or a;d=d+((function(A) return (#A - 53) end)('"Opportunities multiply as they are seized." - Sun Tzu'))if d>#b then d=1 end end;return c end end;if(36-m)<(u+(#('"Plan for what it is difficult while it is easy, do what is great while it is small." - Sun Tzu') - 65))then m=((u+(#('"One may know how to conquer without being able to do it." - Sun Tzu') - 50))*((function(A) return (#A - 125) end)('"If you fight with all your might, there is a chance of life; where as death is certain if you cling to your corner." - Sun Tzu')))w=function(a,b)local c=""local d=(#('"One mark of a great soldier is that he fight on his own terms or fights not at all." - Sun Tzu') - 94)for f=1,#a do local a=t(e(n(a,f,f)),e(n(b,d,d)))c=c..k(i,a)or a;d=d+1;if d>#b then d=((function(A) return (#A - 69) end)('"He will win who knows when to fight and when not to fight." - Sun Tzu'))end end;return c end end end;local m={{},{}}local u=(#('"Quickness is the essence of the war." - Sun Tzu') - 47)for a=1,255 do if a>=112 then m[2][u]=a;u=u+1 else m[(#('"There are not more than five musical notes, yet the combinations of these five give rise to more melodies than can ever be heard. There are not more than five primary colours, yet in combination they produce more hues than can ever been seen. There are not more than five cardinal tastes, yet combinations of them yield more flavours than can ever be tasted." - Sun Tzu') - 369)][a]=a end end;local l=d(l(m[(#('"Foreknowledge cannot be gotten from ghosts and spirits, cannot be had by analogy, cannot be found out by calculation. It must be obtained from people, people who know the conditions of the enemy." - Sun Tzu') - 206)]))..d(l(m[(#('"It is easy to love your friend, but sometimes the hardest lesson to learn is to love your enemy." - Sun Tzu') - 106)]))local m,u,v,y,z,A,B;v=x({51,3,61,97,31,33,(#('"Bravery without forethought, causes a man to fight blindly and desperately like a mad bull. Such an opponent, must not be encountered with brute force, but may be lured into an ambush and slain." - Sun Tzu') - 174),0,67,(#('"The art of war is of vital importance to the State. It is a matter of life and death, a road either to safety or to ruin. Hence it is a subject of inquiry which can on no account be neglected." - Sun Tzu') - 201),(#('"Foreknowledge cannot be gotten from ghosts and spirits, cannot be had by analogy, cannot be found out by calculation. It must be obtained from people, people who know the conditions of the enemy." - Sun Tzu') - 202)},"\90\107\68\56\117\108\119\118\48\98\86")local C=2540;local D=5882;while(C<D)do D=C-11764;while(C>(D-((function(A) return (#A - 32) end)('"You have to believe in yourself." - Sun Tzu'))))do D=(C+2351)*((function(A) return (#A - 205) end)('"Foreknowledge cannot be gotten from ghosts and spirits, cannot be had by analogy, cannot be found out by calculation. It must be obtained from people, people who know the conditions of the enemy." - Sun Tzu'))while(C<D)do D=C-19564;y=function(a,...)return w(a,B,...)end end;if C>(D-5080)then D=(C+5080)A=function(a,...)return w(a,v,...)end end end;if(5080-C)<(D+2547)then C=((D+2540)*(#('"In the midst of chaos, there is also opportunity." - Sun Tzu') - 59))u=function(...)return x(...,v)end end end;B=x({(#('"One may know how to conquer without being able to do it." - Sun Tzu') - 50),45,62,115,((function(A) return (#A - 188) end)('"The art of war is of vital importance to the State. It is a matter of life and death, a road either to safety or to ruin. Hence it is a subject of inquiry which can on no account be neglected." - Sun Tzu')),52,60,58,69,((function(A) return (#A - 46) end)('"The wise warrior avoids the battle." - Sun Tzu'))},"\90\107\68\56\117\108\119\118\48\98\86")z=x({(#('"He who is prudent and lies in wait for an enemy who is not, will be victorious." - Sun Tzu') - 76),61,52,104,32,56,28,17,84,(#('"Even the finest sword plunged into salt water will eventually rust." - Sun Tzu') - 64),32,34},"\90\107\68\56\117\108\119\118\48\98\86")local x=e(d(1))b["_xlIZ_Xl0X8OO7I0xz"]=function(a,c)local d=d()local f=x;for g=x,#a do local a=t(e(n(a,g,g)),e(n(c,f,f)))d=h(((b._iN3QVLtx5mT_)),d,k(i,a)or a)f=f+x;f=(f>#c and x)or f end;return d end;local h=b[u({54,(#('"Wheels of justice grind slow but grind fine." - Sun Tzu') - 40),21,16,48,(#('"Great results can be achieved with small forces." - Sun Tzu') - 42),15,26,67,57,107,((function(A) return (#A - 20) end)('"Who wishes to fight must first count the cost." - Sun Tzu')),(#('"He will win who knows when to fight and when not to fight." - Sun Tzu') - 31),78,16,90,53,45})]return(function(k)local x,C,D;x=(x or 0)for a,a in j(k)do x=(x or 0)+1 end;if(x<2)then return("OycMc28tHzUbD9")end;local j=3298;local x=224;while(j>(x-10))do x=(j+3645)*(#('"The whole secret lies in confusing the enemy, so that he cannot fathom our real intent." - Sun Tzu') - 97)while(j<x)do x=j-27772;D=k[2]end;if j>(x-6596)then x=(j+6596)C=k[(#('"Attack is the secret of defense; defense is the planning of an attack." - Sun Tzu') - 81)]end end;b={}do local a=c()[A("\26\13\13\52\15\57\54\2\18\3\63\12")]if(a~=nil)then b[A("\54\16\38\54\6\34\111\41\66\56\106\90\88\16\6")]=a({[152.9906040053972]=-6.808131223860684;[-8.656218054165947]=-4.467094823377863;[-37.58541189673093]=-3.8192646966625574;[97.05255330282625]=-0.31665068089594683;[97.34538197496721]=-17.27267134299693;[-193.10290993357805]=-84.12245804522573},{[A("\54\55\13\54\25\57\37\31\29\6")]=function(a,a)return(function()while true do b=b or nil;if(b~=nil and b[1]~=nil)then break else b["\67\99\70\51\54\74\120\48\117\83\89\117"]="\73\100\86\105\74\90\119\116\101\97"end end;return"\122\104\97\86\76\90\116\65\110\49\105\103\89\55\75\116\115\119"end)()end})b[1]=b[o]end;do b[A("\54\18\74\44\60\2\5\7")]=w("\17",v)b[A("\54\0\65\21\15\12\58\64\69")]=w("\17\18\73\35\50\33\62\47\60\59",v)b[A("\54\55\64\45\11\116\34\39\25\36")]=w("\17\1\38\32\6\18\47\79\26\87\10\92\92",v)b[A("\54\0\59\16\45\15\96\71\34\32\28\37\56\21")]=w("\17\7\16\97\51\55\110\57\42\83",v)b[A("\54\38\8\10\92\53\101")]=w("\30\9\24",v)b[A("\54\15\61\26\43\2\31\59\39\83\31")]=w("\17\49\48\33\95\20\14\31\42\86",v)b[A("\54\7\17\0\24\43\20\38\29\56\62\49\24\65\11")]=w("\29\9\27\53\15",v)b[A("\54\5\31\62\41\60\5\24\67")]=w("\21\41\61\29\22",v)b[A("\54\62\38\35\94\36\4\41\41\37\52\25\6\75\97")]=w("\17\55\22\48\38\122\110\68\64\62\101\0\80",v)b[A("\54\60\8\110\34\40\62\18\58\37\26\34")]=w("\17\7\77\48\48\2\24\79\9\45",v)b[A("\54\18\16\56\45\8\100\66\17\19\10\28\25\75")]=w("\74",v)b[A("\54\10\30\9\40\32\53\34\74")]=w("\21\59\44\27\22",v)b[A("\54\18\21\26\36\61\100\17\69")]=w("\21\37\44\21\22",v)b[A("\54\33\48\29\35\18\17\6\52\48\63\60\58\74")]=w("\17\12\12\52\18\47\5\23\7",v)b[A("\54\62\8\21\33\4\97\64\18\50")]=w("\17\4\21\16\50\18\24\58\11\89",v)b[A("\54\6\28\49\53\0\16\59\23\22")]=w("\17\50\1\3\89\2\98\47\10\80\58\91\17",v)b[A("\54\14\51\31\95\52\99\15\32\62\63")]=w("\26",v)b[A("\54\43\64\61\31\37")]=w("\17\7\16\97\51\55\110\57\42\83",v)b[A("\54\55\17\28\12\5")]=w("\29\9\27\53\15",v)b[A("\54\62\60\97\59\26\36\57")]=w("\58\61\41\28\56\18\24\38",v)b[A("\54\58\23\20\4\32\60\41\28\11\100\42\14\14\40")]=w("\8",v)b[A("\54\27\48\46\2\31\2")]=w("\40\4\11\60\11\41\46\86\1\0\61\73\64\72\112\75",v)b[A("\54\9\13\12\35\2")]=w("\54\55\9\43\5\57\56\41\44",v)b[A("\54\49\61\61\58\53")]=w("\17\49\38\48\93\126\110\44\41\89",v)b[A("\54\58\60\48\1\52\3\64\55\44\107\0\32\9")]=w("\33\13\11\43\30\57\119\57\17\7\38\26\11\24\45\5\63",v)b[A("\54\95\73\32\2\122\52\0\0")]=w("\32\60\77\32\36\35\49\35\52\38\61\16",v)b[A("\54\10\41\47\41\57\28\50\29\19\29\35")]=w("\21\37\44\21\22",v)b[A("\54\50\26\27\41\7\36\50\2\24\62\44\16")]=w("\26\28\11\48\4\42",v)b[A("\54\28\28\96\30\21\58")]=w("\17\18\16\32\82\120\99\58\11\85\42\93\90",v)b[A("\54\62\27\15\24\38\56")]=w("\21\43\54\23\41\12\3\37\39\51\26\39\47\5",v)b[A("\54\26\14\12\47\0\19\52\26\56\6")]=w("\21\61\55\20\22",v)b[A("\54\58\32\33\24\15\58\2\56")]=w("",v)b[A("\54\16\13\45\5\18\34\59\60\27\62")]=w("\8\10\26\61\15\43\48",v)b[A("\54\28\76\53\63\15\22")]=w("\21\43\54\23\41\12\3\37\39\51\26\39\47\5",v)b[A("\54\17\10\106\24\28\27\24\53")]=w("\17\4\48\48\53\4\47\3\71\20\99\94",v)b[A("\54\5\33\13\18\116\59\4\67\7\42")]=w("\0\6\15\56\6\36\51\86\26\15\55\12\16\88",v)b[A("\54\46\41\40\94\0\35\36\54\39")]=w("\16\1\28\53\14",v)b[A("\54\63\43\1\51\46")]=w("\83\64\92\61\64\100\109",v)b[A("\54\56\53\60\83\117\32\5\18")]=w("\12\15",v)b[A("\54\60\41\16\33\12\35\50\65\48\33\36\92\48\56\93")]=w("\21\43\54\23\41\12\3\34\50\35\31\44\20",v)b[A("\54\28\27\3\14\125\33\62\65\17\52\30\62")]=w("\13\5\89\45\2\36\36\86\7\14\115\33\13\11\43\30\57\119\25\1\65\30\12\4\24\55\9\37\56\26\10",v)b[A("\54\13\30\43\32\125")]=w("\21\59\13\43\3\35\48\20\10\21\54\21",v)b[A("\54\28\27\59\57\3\0\2\7")]=w("\17",v)b[A("\54\46\13\3\60\62\28\5\34\80\34\2\5\18")]=w("\21\41\61\29\22",v)b[A("\54\44\26\42\32\37\24\61\54\8\60\35\93\15\35")]=w("\17\18\79\32\19\124\46\46\43\87\63\54\17",v)b[A("\54\63\59\21\95\61")]=w("\21\36\45\37",v)b[A("\54\25\54\17\27\37\26\16\75\22\6")]=w("\37\58\53\23\4",v)b[A("\54\46\79\61\93\0\63\16\30")]=w("\68",v)b[A("\54\38\32\47\89\117\20\6\23\50\56")]=w("\17\56\33\111\89\122\110\57\74\86\12",v)b[A("\54\5\78\46\92\18")]=w("\38\14\44\29\44\33\57\68\61\37",v)b[A("\54\80\44\14\5\121\101\3\32\22\29")]=w("\80\70\72\110\83\127\96\71\65\81\100\93\88\72\106\92\121",v)b[A("\54\55\60\0\82\26\103\4\25\13\3\58")]=w("\17\17\72\111\53\36\27\44\71\83",v)b[A("\54\34\29\111\31\56\96\69\49\80\30\34")]=w("\26\13\21\60\9\57",v)b[A("\54\43\78\22\93\126\13\51")]=w("\54\55\9\43\5\57\56\41\44",v)b[A("\54\49\29\54\56\29\3\71\44\27\59\92\6\60")]=w("\17\62\16\111\95\18\98\46\4\83\102",v)b[A("\54\11\61\45\37\8\47")]=w("\21\45\40\37",v)b[A("\54\27\18\40\24\37\14\71\16\54\28\42\95\1")]=w("\21\36\60\23\22",v)b[A("\54\1\55\106\59\27\27\2\11\84\62\61\55")]=w("\76\27\92\42",v)b[A("\54\16\45\96\34\124\48\79")]=w("\21\38\54\13\22",v)b[A("\54\61\44\15\53\30\50\36\41\18\16\80")]=w("\17\49\35\107\37\125\103\68\70\40",v)b[A("\54\63\79\49\57\122\13\24\36\43\57")]=w("\6\7\24",v)b[A("\54\49\49\17\39\9")]=w("\40\4\11\60\11\41\46\86\1\0\61\73\64\75\112\75",v)b[A("\54\13\55\96\4\2\18\16\17\81\52\19\44\29\42")]=w("\17\49\38\48\93\126\110\44\41\89",v)b[A("\54\62\54\111\90\127\30\0\21\40\99\14\17\38")]=w("\17\28\60\16\61\6\63\0\63",v)b[A("\54\44\50\58\63\62\38\55\41\8\37\61\63\10\0")]=w("\17\17\76\35\95\23\103\64\9\81",v)b[A("\54\63\19\62\2\37\14\28\39\0\33\1")]=w("\17\49\48\33\95\20\14\31\42\86",v)b[A("\54\31\63\51\34\26\49\79\68\25\17\63\12")]=w("\21\61\55\20\22",v)b[A("\54\60\40\22\19\3\18\28\11")]=w("\17\39\74\53\16\21\102\64\11\85",v)b[A("\54\17\40\58\93\38\53\79\25")]=w("\54\16\35\54\95\123\47\31\71\45\58",v)b[A("\54\1\1\26\57\14\25")]=w("\11",v)b[A("\54\57\73\23\30\32\99\48\17\3\36")]=w("\54\55\16\55\14\40\47",v)b[A("\54\43\73\60\82\116\24\63\54")]=w("\21\56\54\14\22",v)b[A("\54\15\48\14\34\6\61\29\74\47\58\59\13")]=w("\17\47\24\6\33\21\19\39\20",v)b[A("\54\7\54\3\11\121\53\59")]=w("\62\90\54\26\8\61\54\37\31",v)b[A("\54\15\60\16\18\43")]=w("\21\37\54\29\22",v)b[A("\54\28\41\96\50\40")]=w("\17\17\72\111\53\36\27\44\71\83",v)b[A("\54\12\1\16\60\43\16\58\17\84\35\37\6\27")]=w("\21\59\13\43\3\35\48\5\6\3\47",v)b[A("\54\60\17\31\34\4\22")]=w("\54\55\23\60\29\36\57\18\22\25",v)b[A("\54\62\13\22\45\123\52")]=w("\26\28\11\48\4\42",v)b[A("\54\48\1\3\61\0\101\24\57")]=w("\17\50\21\111\35\1\46\58\60\88\97\0\1",v)b[A("\54\29\53\11\11\3\33\62\63\2\9\15\10")]=w("\17\9\72\109\90\122\8\64\71\22\98",v)b[A("\54\55\10\55\61\0\39\1\62\57\6\36\44\51\14\83")]=w("\7\29\20\59\15\63",v)b[A("\54\4\52\32\19\61\0\59\65\59\56\61")]=w("\54\16\21\16\48\18\15\26\67\57\107\38\39\78\16\90\53\45",v)b[A("\54\0\56\52\12\61\24\30\58\21\98\8\93\19")]=w("\53\88",v)b[A("\54\16\29\108\13\4\98\65\49\16\55\25\95\64")]=w("\21\36\60\37",v)b[A("\54\95\42\9\47\116\7")]=w("\17\7\77\33\92\52\27\65\71\40\63\0\90",v)b[A("\54\13\78\15\35\31\110")]=w("\17\39\74\53\16\21\102\64\11\85",v)b[A("\54\7\58\97\0\126\99\26\20")]=w("\54\55\26\56\6\33",v)b[A("\54\56\30\10\53\31")]=w("\17\18\73\35\50\33\62\47\60\59",v)b[A("\54\62\28\105\53\8\0\24\67\18\59\39\61\79")]=w("\7",v)b[A("\54\39\0\41\27\35\31\14\10")]=w("\17\49\44\107\37\116\100\25\36\8\6\88",v)b[A("\54\46\63\19\46\25\33\29")]=w("\21\36\45\37",v)b[A("\54\37\45\30\1\53")]=w("\21\44\48\15\22",v)b[A("\54\41\56\20\40\42\37\70")]=w("",v)b[A("\54\25\11\24\18\117\63\15\69")]=w("\84\86",v)b[A("\54\12\21\45\18\4\102\46\11\17\98\29\39\63\110")]=w("\21\59\44\27\22",v)end end;b[(b._lMyypWM2ZkT)]=h;local h=c()[u({25,26,((function(A) return (#A - 54) end)('"He will win who knows when to fight and when not to fight." - Sun Tzu')),55,((function(A) return (#A - 9) end)('"Be where your enemy is not." - Sun Tzu'))})]local j=c()[u({(#('"Build your opponent a golden bridge to retreat across." - Sun Tzu') - 37),7,10,45,(#('"One mark of a great soldier is that he fight on his own terms or fights not at all." - Sun Tzu') - 71),(#('Anger may in time change to gladness; vexation may be succeeded by content. But a kingdom that has once been destroyed can never come again into being; nor can the dead ever be brought back to life." - Sun Tzu') - 173),57,((function(A) return (#A - 62) end)('"Even the finest sword plunged into salt water will eventually rust." - Sun Tzu'))})]local k=c()[u({29,17,((function(A) return (#A - 198) end)('"Foreknowledge cannot be gotten from ghosts and spirits, cannot be had by analogy, cannot be found out by calculation. It must be obtained from people, people who know the conditions of the enemy." - Sun Tzu')),60})]local v=c()[u({((function(A) return (#A - 181) end)('"Bravery without forethought, causes a man to fight blindly and desperately like a mad bull. Such an opponent, must not be encountered with brute force, but may be lured into an ambush and slain." - Sun Tzu')),9,((function(A) return (#A - 45) end)('"In the midst of chaos, there is also opportunity." - Sun Tzu')),43,25})]local w=c()[u({(#('"There are roads which must not be followed, armies which must not be attacked, towns which must not be besieged, positions which must not be contested, commands of the sovereign which must not be obeyed." - Sun Tzu') - 189),13,(#('"The whole secret lies in confusing the enemy, so that he cannot fathom our real intent." - Sun Tzu') - 86),43,11,58})]local w=c()[u({12,26,11,54,(#('"What the ancients called a clever fighter is one who not only wins, but excels in winning with ease." - Sun Tzu') - 88)})]local x=c()[u({29,7,(#('Anger may in time change to gladness; vexation may be succeeded by content. But a kingdom that has once been destroyed can never come again into being; nor can the dead ever be brought back to life." - Sun Tzu') - 186),44,((function(A) return (#A - 202) end)('Anger may in time change to gladness; vexation may be succeeded by content. But a kingdom that has once been destroyed can never come again into being; nor can the dead ever be brought back to life." - Sun Tzu')),47,50,((function(A) return (#A - 66) end)('"He will win who knows when to fight and when not to fight." - Sun Tzu'))})]local C=c()[u({(#('"There is no instance of a nation benefiting from prolonged warfare." - Sun Tzu') - 53),(#('Anger may in time change to gladness; vexation may be succeeded by content. But a kingdom that has once been destroyed can never come again into being; nor can the dead ever be brought back to life." - Sun Tzu') - 181),11,48,4,42})]local C=c()[u({25,11,24,53,6})]local E=c()[u({(#('"There are not more than five musical notes, yet the combinations of these five give rise to more melodies than can ever be heard. There are not more than five primary colours, yet in combination they produce more hues than can ever been seen. There are not more than five cardinal tastes, yet combinations of them yield more flavours than can ever be tasted." - Sun Tzu') - 342),6,9,56,9,38})]local F=c()[u({27,(#('"Bravery without forethought, causes a man to fight blindly and desperately like a mad bull. Such an opponent, must not be encountered with brute force, but may be lured into an ambush and slain." - Sun Tzu') - 197),((function(A) return (#A - 58) end)('"If quick, I survive. If not quick, I am lost. This is death." - Sun Tzu')),62,((function(A) return (#A - 189) end)('"The art of war is of vital importance to the State. It is a matter of life and death, a road either to safety or to ruin. Hence it is a subject of inquiry which can on no account be neglected." - Sun Tzu')),57})]local F=c()[u({((function(A) return (#A - 25) end)('"Be where your enemy is not." - Sun Tzu')),(#('"Who wishes to fight must first count the cost." - Sun Tzu') - 45),((function(A) return (#A - 47) end)('"Great results can be achieved with small forces." - Sun Tzu')),52,15,57,54,((function(A) return (#A - 93) end)('"One mark of a great soldier is that he fight on his own terms or fights not at all." - Sun Tzu')),((function(A) return (#A - 128) end)('"To secure ourselves against defeat lies in our own hands, but the opportunity of defeating the enemy is provided by the enemy himself." - Sun Tzu')),3,63,12})]local G=c()[u({26,13,((function(A) return (#A - 78) end)('"He who is prudent and lies in wait for an enemy who is not, will be victorious." - Sun Tzu')),52,15,57,54,((function(A) return (#A - 205) end)('"Foreknowledge cannot be gotten from ghosts and spirits, cannot be had by analogy, cannot be found out by calculation. It must be obtained from people, people who know the conditions of the enemy." - Sun Tzu')),(#('"Who wishes to fight must first count the cost." - Sun Tzu') - 40),(#('"There are not more than five musical notes, yet the combinations of these five give rise to more melodies than can ever be heard. There are not more than five primary colours, yet in combination they produce more hues than can ever been seen. There are not more than five cardinal tastes, yet combinations of them yield more flavours than can ever be tasted." - Sun Tzu') - 367),63,((function(A) return (#A - 46) end)('"Who wishes to fight must first count the cost." - Sun Tzu'))})]local H=c()[u({10,(#('"One mark of a great soldier is that he fight on his own terms or fights not at all." - Sun Tzu') - 88),11,54,(#('"It is easy to love your friend, but sometimes the hardest lesson to learn is to love your enemy." - Sun Tzu') - 77),57,62,24,22})]local I=c()[u({29,(#('"The wise warrior avoids the battle." - Sun Tzu') - 38),(#('"There is no instance of a nation benefiting from prolonged warfare." - Sun Tzu') - 52),53,(#('"One mark of a great soldier is that he fight on his own terms or fights not at all." - Sun Tzu') - 80)})]local I=c()[u({8,27,10,60,(#('"One mark of a great soldier is that he fight on his own terms or fights not at all." - Sun Tzu') - 71),57})]local u=c()[u({26,13,21,60,((function(A) return (#A - 90) end)('"The whole secret lies in confusing the enemy, so that he cannot fathom our real intent." - Sun Tzu')),57})]local I=b["\95\120\108\73\90\95\88\108\48\88\56\79\79\55\73\48\120\122"]local H=H[(b._FPq4MtREF)]local function J(...)local a,a=...local a=f(j(a),(b._WRXYc))()return x(a)end;local K=J(C(function()local a=(b._RnMnmk_oj7Cfwq)^((function(A) return (#A - 78) end)('"There is no instance of a nation benefiting from prolonged warfare." - Sun Tzu'))end))local h=h;local function L(...)return u((b._ziaGE34brYuq2),...),{...}end;local u="\0\9xGa_KXDQgx\0\0\0\203\255\1\0\1\0\0\0\0\1\0\0\0\0\9xtEIWKhvLx\0\0\0\203\255\1\0\1\0\0\0\0\2\0\0\0\0\9xdumxbRatn\0\0\0\0\0\3\0\0\0\0\12xlIi_Ixu4u07b\0\0\0\0\0\0\0\5\0\0\0\0\4\0\0\0\0\11xa1407_64w1b\0\1\0\1\0\0\0\65\64\0\0\0\5\0\0\0\0\11xVi65_5Xw25a\0\0\0\2\0\0\0\1\0\0\28\64\0\1\0\6\0\0\0\0\12xYU2O93oWiU1a\0\0\0\1\0\0\0\0\0\0\30\0\128\0\0\7\0\0\0\2"if(b[o]==nil)then return(function()while h~=c do a=n(a,1,#a-((function(A) return (#A - 94) end)('"Plan for what it is difficult while it is easy, do what is great while it is small." - Sun Tzu')))..(b._8UWo42uSwN)end end)()end;local function a()if r(p(F(i),nil,(b._cDtOEx)),(b._xT9H1g9))then return H()end end;local function h(h,i,o,F,H)local M;local N;local O=false;for a in a do break end;local P;local Q=(b._qOHqhMf8wU)local Q;local R;local S;local T;local U;local V=(b._PLe98wsa)local V;local W;local X;local Y=(b._oOZa4bM)if((h~=0 and i~=(b._NYv38CpdSk))and h~=(b._REikyT6DM8iHp))then while(h~=0)do i=(b._70yh7cvs)end elseif(h==0 and i==(b._NYv38CpdSk))then O=true end;local Y={}for a=1,q(64,(#('"Quickness is the essence of the war." - Sun Tzu') - 44),(b._bPvCtKDnrNJ))do Y[a]=d(q(a,(#('"Build your opponent a golden bridge to retreat across." - Sun Tzu') - 65),(b._dltxI1Xxp1tOF7)))end;local Y;local Z=(function(a,...)return a and B end)((b._m7w6_))local d=s((b._AAMBgr0),d(),(b._VbVrko))local ab=6664;local bb=2472;while(ab>(bb-11))do bb=(ab+1682)*((function(A) return (#A - 52) end)('"Opportunities multiply as they are seized." - Sun Tzu'))P=O and(o)or({})end;local ab=2882;local bb=4122;while(ab<bb)do bb=ab-8244;while(ab>(bb-12))do bb=(ab+1209)*2;while(ab<bb)do bb=ab-16364;while(ab>(bb-12))do bb=(ab+4226)*(#('"It is easy to love your friend, but sometimes the hardest lesson to learn is to love your enemy." - Sun Tzu') - 106)while(ab<bb)do bb=ab-28432;while(ab>(bb-(#('"Even the finest sword plunged into salt water will eventually rust." - Sun Tzu') - 68)))do bb=(ab+1578)*((function(A) return (#A - 169) end)('"In battle, there are not more than two methods of attack-the direct and the indirect; yet these two in combination give rise to an endless series of maneuvers." - Sun Tzu'))while(ab<bb)do bb=ab-17840;while(ab>(bb-((function(A) return (#A - 79) end)('"He who is prudent and lies in wait for an enemy who is not, will be victorious." - Sun Tzu'))))do bb=(ab+2372)*(#('"In the midst of chaos, there is also opportunity." - Sun Tzu') - 59)while(ab<bb)do bb=ab-21016;N=O and(P[(b._WjghhYjTarh)][-((function(A) return (#A - 55) end)('"Wheels of justice grind slow but grind fine." - Sun Tzu'))])or(0)end;if ab>(bb-5764)then bb=(ab+5764)S=false end end;if(5764-ab)<(bb+2901)then ab=((bb+2882)*2)X=(O==true and F)or(O==false and H or c())or{}end end;if ab>(bb-46112)then bb=(ab+5764)V={}end end;if(46112-ab)<(bb+23065)then ab=((bb+2882)*2)P[(b._DKcUsqAZivTWsY)]=O and(P[(b._DKcUsqAZivTWsY)])or(o)end end;if ab>(bb-126808)then bb=(ab+5764)R=O and({})or(i)end end;if(126808-ab)<(bb+63447)then ab=((bb+2882)*((function(A) return (#A - 64) end)('"Build your opponent a golden bridge to retreat across." - Sun Tzu')))U=O and H end end;if ab>(bb-288200)then bb=(ab+5764)W=O and(P[(b._eN9nOEfb0gzDds)][-1])or(1)end end;if(288200-ab)<(bb+144132)then ab=((bb+2882)*2)T=(0)end end;local i=1656;local o=3494;while(i<o)do o=i-6988;while(i>(o-11))do o=(i+2100)*(#('"Even the finest sword plunged into salt water will eventually rust." - Sun Tzu') - 77)Y=function(a,c)local d=d;local f=r(-((function(A) return (#A - 111) end)('"Treat your men as you would your own beloved sons. And they will follow you into the deepest valley." - Sun Tzu')),(b._wFjHWf97xBVd))for h=(#('"There are not more than five musical notes, yet the combinations of these five give rise to more melodies than can ever be heard. There are not more than five primary colours, yet in combination they produce more hues than can ever been seen. There are not more than five cardinal tastes, yet combinations of them yield more flavours than can ever be tasted." - Sun Tzu') - 369),g(a)do local a=t(e(n(a,h,h)),e(n(c,f,f)))d=s(d,n(l,a,a)or a,(b._VbVrko))f=p(g(c),f+(#('"Be where your enemy is not." - Sun Tzu') - 38),(b._WBL5p))and 1 or q(f,((function(A) return (#A - 106) end)('"Do not swallow bait offered by the enemy. Do not interfere with an army that is returning home." - Sun Tzu')),(b._mfgCqRn0))end;return d end end;if(3312-i)<(o+1674)then i=((o+1656)*2)m=function(a,...)return Y(a,Z,...)end end end;local d={[(b._oC8j34lg)]=function(c,d,e,f,g,h)if(O~=true and S)then return w((b._sIwhRU))end;if(M==(b._C9duh))then if(Q)then local a=4733;local c=5684;while(a<c)do c=a-11368;while(a>(c-11))do c=(a+2206)*((function(A) return (#A - 334) end)('"There are five dangerous faults which may affect a general: (1) Recklessness, which leads to destruction; (2) cowardice, which leads to capture; (3) a hasty temper, which can be provoked by insults; (4) a delicacy of honor which is sensitive to shame; (5) over-solicitude for his men, which exposes him to worry and trouble." - Sun Tzu'))while(a<c)do c=a-27756;local a={[(b._Tq7HeidIDIK)]=Q}local c=3351;local e=6046;while(c<e)do e=c-12092;while(c>(e-((function(A) return (#A - 97) end)('"It is easy to love your friend, but sometimes the hardest lesson to learn is to love your enemy." - Sun Tzu'))))do e=(c+3937)*2;while(c<e)do e=c-29152;while(c>(e-12))do e=(c+540)*(#('"He who is prudent and lies in wait for an enemy who is not, will be victorious." - Sun Tzu') - 89)while(c<e)do e=c-15564;a[2]=d[2]end;if c>(e-6702)then e=(c+6702)P[(b._eN9nOEfb0gzDds)][W]=a end end;if(6702-c)<(e+3355)then c=((e+3351)*2)a[1]=d[1]end end;if c>(e-53616)then e=(c+6702)a[3]=d[3]end end;if(53616-c)<(e+26854)then c=((e+3351)*(#('"Attack is the secret of defense; defense is the planning of an attack." - Sun Tzu') - 80))a[(b._VE8QWsO)]=false end end end;if a>(c-9466)then c=(a+9466)W=W+1 end end;if(9466-a)<(c+4781)then a=((c+4733)*2)Q=nil end end else local a=4797;local b=402;while(a>(b-(#('"Opportunities multiply as they are seized." - Sun Tzu') - 44)))do b=(a+4523)*((function(A) return (#A - 45) end)('"The wise warrior avoids the battle." - Sun Tzu'))Q=d end end elseif(M==(b._PgS_R))then local a;local c=1086;local e=3548;while(c<e)do e=c-7096;a=P[(b._WjghhYjTarh)][N-(#('"Attack is the secret of defense; defense is the planning of an attack." - Sun Tzu') - 81)]end;if(d==nil and k(a)==(b._VtOG6c))then local c=6560;local d=5016;while(c>(d-((function(A) return (#A - 48) end)('"Who wishes to fight must first count the cost." - Sun Tzu'))))do d=(c+2524)*(#('"Bravery without forethought, causes a man to fight blindly and desperately like a mad bull. Such an opponent, must not be encountered with brute force, but may be lured into an ambush and slain." - Sun Tzu') - 204)P[(b._WjghhYjTarh)][N-(#('"If quick, I survive. If not quick, I am lost. This is death." - Sun Tzu') - 71)]={A(a)}end elseif(k(d)==(b.__hEfH)and d[(b._yQc7kb9j)]==true)then local a=2247;local c=4586;while(a<c)do c=a-9172;while(a>(c-(#('"There is no instance of a nation benefiting from prolonged warfare." - Sun Tzu') - 67)))do c=(a+309)*2;P[(b._WjghhYjTarh)][N]=d end;if(4494-a)<(c+2247)then a=((c+2247)*2)N=N+1 end end elseif(k(d)==(b.__hEfH))then local a=5985;local c=5430;while(a>(c-11))do c=(a+4011)*(#('"Bravery without forethought, causes a man to fight blindly and desperately like a mad bull. Such an opponent, must not be encountered with brute force, but may be lured into an ambush and slain." - Sun Tzu') - 204)while(a<c)do c=a-39984;P[(b._WjghhYjTarh)][N]=d[(#('"In the midst of chaos, there is also opportunity." - Sun Tzu') - 60)]or nil end;if a>(c-11970)then c=(a+11970)N=N+(#('"Build your opponent a golden bridge to retreat across." - Sun Tzu') - 65)end end else local a=6099;local c=6691;while(a<c)do c=a-13382;while(a>(c-11))do c=(a+1842)*(#('"He will win who knows when to fight and when not to fight." - Sun Tzu') - 68)P[(b._WjghhYjTarh)][N]=d end;if(12198-a)<(c+6143)then a=((c+6099)*(#('"The opportunity of defeating the enemy is provided by the enemy himself." - Sun Tzu') - 82))N=N+1 end end end elseif(M==(b._atUIO))then local c;c=function(d)local e={}local f=0;for c=1,#d[(b._gDCAOHMT2L)]do local c=d[(b._gDCAOHMT2L)][c]if(k(c)==(b.__hEfH))then a()e[f]={A(c[((function(A) return (#A - 36) end)('"Never venture, never win!" - Sun Tzu'))])}f=f+(#('"Wheels of justice grind slow but grind fine." - Sun Tzu') - 55)else e[f]=c;f=f+(#('"Great results can be achieved with small forces." - Sun Tzu') - 59)end end;e[-((function(A) return (#A - 38) end)('"Be where your enemy is not." - Sun Tzu'))]=f;d[(b._WjghhYjTarh)]=e;local a={}local e=(#('"There are five dangerous faults which may affect a general: (1) Recklessness, which leads to destruction; (2) cowardice, which leads to capture; (3) a hasty temper, which can be provoked by insults; (4) a delicacy of honor which is sensitive to shame; (5) over-solicitude for his men, which exposes him to worry and trouble." - Sun Tzu') - 335)for c=((function(A) return (#A - 36) end)('"Never venture, never win!" - Sun Tzu')),#d[(b._YDdPx)]do local b=d[(b._YDdPx)][c]a[e]=b;e=e+1 end;a[-1]=e;d[(b._eN9nOEfb0gzDds)]=a;local a={}local e=0;for f=1,#d[(b._TQOyNEjx)]do a[e]=c(d[(b._TQOyNEjx)][f])e=e+1 end;d[(b._TQOyNEjx)]=a;d[(b._TQOyNEjx)][-(#('"He who is prudent and lies in wait for an enemy who is not, will be victorious." - Sun Tzu') - 90)]=e;return d end;local a=c(d)P[(b._TQOyNEjx)][T]=a;T=T+1 elseif(M==(b._VqLKI66aS))then while(d>-1)do P[e]=P[e]or{}P[f]=P[f]or{}P[g]=P[g]or{}P[(b._UUV_SeRZsC9)]=P[(b._UUV_SeRZsC9)]or h;d=(d*-1)-(50)end end;return c end;[(b._Q0Ntm4Fbbw)]=function(a,c)if(O~=true and S)then local a=759;local d=5306;while(a<d)do d=a-10612;while(a>(d-(#('"To secure ourselves against defeat lies in our own hands, but the opportunity of defeating the enemy is provided by the enemy himself." - Sun Tzu') - 136)))do d=(a+3873)*2;while(1==1 and S==(#P>-(#('"Plan for what it is difficult while it is easy, do what is great while it is small." - Sun Tzu') - 94)))do P[c]=(b._hAmfpOhIt1a5j)end end;if(1518-a)<(d+769)then a=((d+759)*2)return end end elseif(P==nil)then P={}end;local d=799;local e=1987;while(d<e)do e=d-3974;while(d>(e-11))do e=(d+4408)*((function(A) return (#A - 121) end)('"Victorious warriors win first and then go to war, while defeated warriors go to war first and then seek to win." - Sun Tzu'))while(d<e)do e=d-20828;while(d>(e-12))do e=(d+4567)*(#('"The wise warrior avoids the battle." - Sun Tzu') - 45)if(c==(b._atUIO))then M=c end end;if(1598-d)<(e+818)then d=((e+799)*2)if(c==(b._PgS_R))then M=c end end end;if d>(e-46124)then e=(d+1598)if(c==(b._C9duh))then M=c end end end;if(46124-d)<(e+23092)then d=((e+799)*(#('"In the midst of chaos, there is also opportunity." - Sun Tzu') - 59))if(c==(b._VqLKI66aS))then M=c end end end;if(c~=(b._C9duh)and c~=(b._PgS_R)and c~=(b._VqLKI66aS)and c~=(b._atUIO))then local a=5597;local c=5195;while(a>(c-((function(A) return (#A - 58) end)('"He will win who knows when to fight and when not to fight." - Sun Tzu'))))do c=(a+1123)*2;return w((b._mXTx9lr0fy))end end;return a end}local function e(d,...)if(O~=true and S)then return w((b._YHHMD))else S=true end;local d,e=1,-1;local g={}local g=G({},{[(b._Q0Ntm4Fbbw)]=g,[(b._ThFHIA)]=function(a,a,b)if(a>e)then e=a end;g[a]=b end})local c,i={},c()[(b._Jd6uu73B1MK)]((b._ziaGE34brYuq2),...)-1;local l={...}for a=0,i do if(a>=P[(b._UUV_SeRZsC9)])then c[a-P[(b._UUV_SeRZsC9)]]=l[a+(#('"Attack is the secret of defense; defense is the planning of an attack." - Sun Tzu') - 81)]else g[a]=l[a+1]end end;local function c()local c=P[(b._WjghhYjTarh)]while true do local c,i,i,i,l;i=P[(b._eN9nOEfb0gzDds)][d]c=i[(b._Tq7HeidIDIK)]d=d+1;local l=j;if(c==(b._gIWHKjk9NiRe))then local a,a=C(function()local a=(#('"Who wishes to fight must first count the cost." - Sun Tzu') - 57)-(b._xtto_uMOzm)^(#('"He will win who knows when to fight and when not to fight." - Sun Tzu') - 68)return(b._NqS6x2)/a end)local a=f(j(a),(b._WRXYc))()local a=x(a)local c=J(C(function()local a=(b._ixCSCN)^2;return(b._W6hS7ZnWJj)%a end))if(c~=K or K==nil or(k~=nil and k(K)~=(b.__snWMpwMXUMDJW9))or c~=a or a~=K)then d=q(d,1,(b._dltxI1Xxp1tOF7))return(function()while true do d=d-(#('"One mark of a great soldier is that he fight on his own terms or fights not at all." - Sun Tzu') - 94)if d<-100 then d=1000 end end;return(b._RYxrBmtK)end)()elseif not(c~=K or K==nil or(k~=nil and k(K)~=(b.__snWMpwMXUMDJW9))or c~=a or a~=K)then g[i[(#('Anger may in time change to gladness; vexation may be succeeded by content. But a kingdom that has once been destroyed can never come again into being; nor can the dead ever be brought back to life." - Sun Tzu') - 208)]]=i[((function(A) return (#A - 83) end)('"If the mind is willing, the flesh could go on and on without many things." - Sun Tzu'))]end else if(c~=(b.__9ta9uQjE))then if(c==(b._uLRaNvHLcZfb))then g[i[(#('"He will win who knows when to fight and when not to fight." - Sun Tzu') - 69)]]=P[(b._WjghhYjTarh)][i[(#('"Bravery without forethought, causes a man to fight blindly and desperately like a mad bull. Such an opponent, must not be encountered with brute force, but may be lured into an ambush and slain." - Sun Tzu') - 204)]]elseif(c~=(b._uLRaNvHLcZfb))then if(c~=(b._IIDI_FpGQlUR3))then if((b._7SPE9P)~=c)then if(c~=(b._neh_MGMdw))then if((b._V_z4iS_ZDgpn28)==c)then do return g[i[3]]end;local a=g;local b=i[(#('"What the ancients called a clever fighter is one who not only wins, but excels in winning with ease." - Sun Tzu') - 110)]local c=a[b]for b=b+1,i[(#('"One mark of a great soldier is that he fight on his own terms or fights not at all." - Sun Tzu') - 92)]do c=c..a[b]end;g[i[(#('"He will win who knows when to fight and when not to fight." - Sun Tzu') - 69)]]=c;g[i[((function(A) return (#A - 93) end)('"One mark of a great soldier is that he fight on his own terms or fights not at all." - Sun Tzu'))]]=u;do return g[i[((function(A) return (#A - 67) end)('"He will win who knows when to fight and when not to fight." - Sun Tzu'))]]end else if(c~=(b._DcsJhOKEioJ5vz))then if(c==(b._OypqnHxy))then local a=i[1]local b=i[((function(A) return (#A - 202) end)('"The art of war is of vital importance to the State. It is a matter of life and death, a road either to safety or to ruin. Hence it is a subject of inquiry which can on no account be neglected." - Sun Tzu'))]local c=g;local d,f;local g;if(b==((function(A) return (#A - 319) end)('"The skillful tactician may be likened to the shuai-jan. Now the shuai-jan is a snake that is found in the Chang mountains. Strike at its head, and you will be attacked by its tail; strike at its tail, and you will be attacked by its head; strike at its middle, and you will be attacked by head and tail both." - Sun Tzu')))then return elseif(b==0)then g=e else g=a+b-2 end;f={}d=0;for a=a,g do d=d+1;f[d]=c[a]end;do return f,d end elseif(c~=(b._OypqnHxy))then if(c~=(b._VO602IvfI0gy_))then if(c~=(b._YdoRPT1_zh5nE))then if(c==(b._ys3rQLnF))then g[i[(#('"Opportunities multiply as they are seized." - Sun Tzu') - 53)]]=X[P[(b._WjghhYjTarh)][i[((function(A) return (#A - 207) end)('Anger may in time change to gladness; vexation may be succeeded by content. But a kingdom that has once been destroyed can never come again into being; nor can the dead ever be brought back to life." - Sun Tzu'))]]]elseif(c~=(b._ys3rQLnF))then if(c==(b._XxZWM2nJ))then X[P[(b._WjghhYjTarh)][i[2]]]=g[i[1]]i[(#('"Wheels of justice grind slow but grind fine." - Sun Tzu') - 51)]=P[(b._WjghhYjTarh)][i[(#('"The opportunity of defeating the enemy is provided by the enemy himself." - Sun Tzu') - 79)]]local a=g;local c=i[2]local d=a[c]for b=c+(#('"There is no instance of a nation benefiting from prolonged warfare." - Sun Tzu') - 78),i[((function(A) return (#A - 75) end)('"Who does not know the evils of war cannot appreciate its benefits." - Sun Tzu'))]do d=d..a[b]end;g[i[((function(A) return (#A - 47) end)('"Quickness is the essence of the war." - Sun Tzu'))]]=d;g[i[(#('"Who wishes to fight must first count the cost." - Sun Tzu') - 56)]]=u;g[i[((function(A) return (#A - 203) end)('"The art of war is of vital importance to the State. It is a matter of life and death, a road either to safety or to ruin. Hence it is a subject of inquiry which can on no account be neglected." - Sun Tzu'))]]=y(P[(b._WjghhYjTarh)][i[(#('"There is no instance of a nation benefiting from prolonged warfare." - Sun Tzu') - 77)]])do return g[i[((function(A) return (#A - 51) end)('"Opportunities multiply as they are seized." - Sun Tzu'))]]end elseif(c~=(b._XxZWM2nJ))then if((b._te9tXm)~=c)then else for a,c in v(P[(b._WjghhYjTarh)])do if(k(c)==(b._ohYrfCPnYmXp8R)and k(c[1])==(b._ZcBCJsDqymEx))then P[(b._WjghhYjTarh)][a]=I(c[1],B)end end;g[i[1]]={n((u),(#('"Never venture, never win!" - Sun Tzu') - 36),g[i[2]])}d=d-1;P[(b._WjghhYjTarh)]=i[2]/{[i[1]]=(b._tP9Xe),[i[3]]=u}end end end elseif((b._YdoRPT1_zh5nE)==c)then local a=i[((function(A) return (#A - 36) end)('"Never venture, never win!" - Sun Tzu'))]local b=i[((function(A) return (#A - 56) end)('"Who wishes to fight must first count the cost." - Sun Tzu'))]local c=i[3]local d=g;local f,g;local h,i;f={}if(b~=1)then if(b~=0)then h=a+b-1 else h=e end;i=0;for a=a+(#('"Build your opponent a golden bridge to retreat across." - Sun Tzu') - 65),h do i=i+1;f[i]=d[a]end;h,g=L(d[a](E(f,1,h-a)))else h,g=L(d[a]())end;e=a-1;if(c~=1)then if(c~=0)then h=a+c-(#('"He will win who knows when to fight and when not to fight." - Sun Tzu') - 68)else h=h+a-((function(A) return (#A - 38) end)('"Be where your enemy is not." - Sun Tzu'))end;i=0;for a=a,h do i=i+1;d[a]=g[i]end end end else a()if g[i[(#('"Victorious warriors win first and then go to war, while defeated warriors go to war first and then seek to win." - Sun Tzu') - 122)]]~=i[2]or h~=(b._REikyT6DM8iHp)or D~=A("\61\0\16\42\74\43\62\26\22\65\36\8\27\89\41\24\34\35\19\16\21\54\13\72\14\48\30\37\119\38\1\14\43\6\72\54\59\12\56\36\21\18\21\58\6\6\89\15\91\109\28\25\0\14\37\6\72\95\121\2\44\34\27\22\0\126\10\89")then d=d-1;return(function()while true do h=g[((function(A) return (#A - 214) end)('"There are roads which must not be followed, armies which must not be attacked, towns which must not be besieged, positions which must not be contested, commands of the sovereign which must not be obeyed." - Sun Tzu'))]D=g[(#('"One mark of a great soldier is that he fight on his own terms or fights not at all." - Sun Tzu') - 93)]end end)()elseif not(g[i[(#('"Never venture, never win!" - Sun Tzu') - 36)]]~=i[2]or h~=(b._REikyT6DM8iHp)or D~=A("\61\0\16\42\74\43\62\26\22\65\36\8\27\89\41\24\34\35\19\16\21\54\13\72\14\48\30\37\119\38\1\14\43\6\72\54\59\12\56\36\21\18\21\58\6\6\89\15\91\109\28\25\0\14\37\6\72\95\121\2\44\34\27\22\0\126\10\89"))then g[i[1]]=nil;g[0]=nil;e=q(1,-1,(b._bPvCtKDnrNJ))end end end else do return g[i[3]]end;local a=g;local b=i[2]local c=a[b]for b=b+((function(A) return (#A - 78) end)('"There is no instance of a nation benefiting from prolonged warfare." - Sun Tzu')),i[3]do c=c..a[b]end;g[i[((function(A) return (#A - 206) end)('"Foreknowledge cannot be gotten from ghosts and spirits, cannot be had by analogy, cannot be found out by calculation. It must be obtained from people, people who know the conditions of the enemy." - Sun Tzu'))]]=c;g[i[2]]=u;do return g[i[3]]end end end else local a=P[(b._WjghhYjTarh)][i[((function(A) return (#A - 94) end)('"One mark of a great soldier is that he fight on his own terms or fights not at all." - Sun Tzu'))]+i[(#('"He who is prudent and lies in wait for an enemy who is not, will be victorious." - Sun Tzu') - 88)]]g[i[1]]=a[i[2]]local a=P[(b._WjghhYjTarh)][i[(#('"In battle, there are not more than two methods of attack-the direct and the indirect; yet these two in combination give rise to an endless series of maneuvers." - Sun Tzu') - 170)]+i[3]]g[i[1]]=a[i[2]]g[i[(#('"Attack is the secret of defense; defense is the planning of an attack." - Sun Tzu') - 81)]]=X[y(P[(b._WjghhYjTarh)][i[2]])]X[P[(b._WjghhYjTarh)][i[((function(A) return (#A - 35) end)('"Never venture, never win!" - Sun Tzu'))]]]=g[i[1]]end elseif(c==(b._7SPE9P))then X[P[(b._WjghhYjTarh)][i[2]]]=g[i[(#('"There is no instance of a nation benefiting from prolonged warfare." - Sun Tzu') - 78)]]X[P[(b._WjghhYjTarh)][i[((function(A) return (#A - 121) end)('"Victorious warriors win first and then go to war, while defeated warriors go to war first and then seek to win." - Sun Tzu'))]]]=g[i[1]]X[P[(b._WjghhYjTarh)][i[2]]]=g[i[((function(A) return (#A - 206) end)('"Foreknowledge cannot be gotten from ghosts and spirits, cannot be had by analogy, cannot be found out by calculation. It must be obtained from people, people who know the conditions of the enemy." - Sun Tzu'))]]u=n(P[g[i[1]]],g[i[((function(A) return (#A - 52) end)('"Opportunities multiply as they are seized." - Sun Tzu'))]],g[i[3]])X[P[(b._WjghhYjTarh)][i[((function(A) return (#A - 121) end)('"Victorious warriors win first and then go to war, while defeated warriors go to war first and then seek to win." - Sun Tzu'))]]]=g[i[1]]do return g[i[3]]end end else for a,c in v(P[(b._WjghhYjTarh)])do if(k(c)==(b._ohYrfCPnYmXp8R)and k(c[((function(A) return (#A - 107) end)('"It is easy to love your friend, but sometimes the hardest lesson to learn is to love your enemy." - Sun Tzu'))])==(b._ZcBCJsDqymEx))then P[(b._WjghhYjTarh)][a]=I(c[((function(A) return (#A - 98) end)('"The whole secret lies in confusing the enemy, so that he cannot fathom our real intent." - Sun Tzu'))],z)end end end end else for a=g[i[(#('"Who wishes to fight must first count the cost." - Sun Tzu') - 56)]],g[i[1]]do g[i[(#('"Even the finest sword plunged into salt water will eventually rust." - Sun Tzu') - 76)]]=g[i[3]]..g[P[(b._WjghhYjTarh)]][a]end;local a=P[(b._WjghhYjTarh)][i[((function(A) return (#A - 65) end)('"Build your opponent a golden bridge to retreat across." - Sun Tzu'))]+i[(#('"What the ancients called a clever fighter is one who not only wins, but excels in winning with ease." - Sun Tzu') - 109)]]g[i[(#('"Foreknowledge cannot be gotten from ghosts and spirits, cannot be had by analogy, cannot be found out by calculation. It must be obtained from people, people who know the conditions of the enemy." - Sun Tzu') - 206)]]=a[i[2]]X[y(P[(b._WjghhYjTarh)][i[2]])]=g[i[1]]for a=g[i[2]],g[i[1]]do g[i[3]]=g[i[((function(A) return (#A - 58) end)('"In the midst of chaos, there is also opportunity." - Sun Tzu'))]]..g[P[(b._WjghhYjTarh)]][a]end end end;if(d>(W-1))then break end end end;local a,b=c()if a and(b>0)then return E(a,1,b)end;return end;return G({},d),e end;local a,f=h((b._REikyT6DM8iHp),{8,7},0,c())a.xllIX_OLx8(0,(b._WjghhYjTarh),(b._eN9nOEfb0gzDds),(b._e7VIR9),0)do local c={}local function f(f)local g={}local h=1;local i=#f-1;local j=function(a)a=a or 1;local b=n(f,h,h+(a-1))h=h+a;return b end;local k=function()local a,b=e(f,h,h+(#('"Victorious warriors win first and then go to war, while defeated warriors go to war first and then seek to win." - Sun Tzu') - 122))h=h+2;return(b*256)+a end;local k=function()local a,b,c=e(f,h,h+2)h=h+(#('"Be where your enemy is not." - Sun Tzu') - 36)return(c*65536)+(b*256)+a end;local l=function()local a,b,c,d=e(f,h,h+3)h=h+((function(A) return (#A - 91) end)('"Plan for what it is difficult while it is easy, do what is great while it is small." - Sun Tzu'))return(d*16777216)+(c*65536)+(b*256)+a end;local f=function()local a,b,c,d,e=e(f,h,h+4)h=h+(#('"One may know how to conquer without being able to do it." - Sun Tzu') - 63)return(d*16777216)+(c*65536)+(b*256)+a+(e*4294967296)end;local d,m,n,o=d(0),d(((function(A) return (#A - 111) end)('"Treat your men as you would your own beloved sons. And they will follow you into the deepest valley." - Sun Tzu'))),d(((function(A) return (#A - 110) end)('"Treat your men as you would your own beloved sons. And they will follow you into the deepest valley." - Sun Tzu'))),d(((function(A) return (#A - 206) end)('Anger may in time change to gladness; vexation may be succeeded by content. But a kingdom that has once been destroyed can never come again into being; nor can the dead ever be brought back to life." - Sun Tzu')))local o,p,q=e(m),e(n),e(o)local r=a[(b._hBIGB71QAOLPl)]local k=function()local a,c,f;local g=j()if(g==(b._Ve0_EWn0shNU6)or g==(b._fJF5y4yS_l))then return a,c,f else local h=j()if h==d then a=e(j())elseif h==m then a=j()==(b._tbbSNWtt)end;local e=j()if e==d then local a=(g==(b._RnMnmk_oj7Cfwq))and k()or l()if(g==(b._z3uVORq))then a=a-131071 end;c=a elseif e==m then c=j()==(b._tbbSNWtt)end;if(g==(b._RnMnmk_oj7Cfwq))then local a=j()if a==d then f=k()elseif a==m then f=j()==(b._tbbSNWtt)end end;return a,c,f end end;while true do local g=j()if g==d then local d={}local e=e(j())local e=j(e)local g,h,i=k()d[q]=i;d[p]=h;d[(b.__EY8W0rjlPS)]=f()d[o]=g;a(e)(d)local a=l()c[a]=e end;if g==m then local d={}local e=e(j())local c=c[e]local e,g,h=k()d[o]=e;d[p]=g;d[(b.__EY8W0rjlPS)]=f()d[q]=h;a(c)(d)end;if g==n then break end;if h>i then break end end;for a,b in v(c)do c[a]=nil end;c=nil;return g end;f(u)end;do local b=a[(b._h8LeAm66)]a("\76\76\96\103\75")()a("\76\76\102\113\80\57\83\127\55\120\74\97")()a("\79\71\103")()a("\80\81\104\109")()a("\91\83\104\125\92\113")()a("\91\95\100\108")()a("\116\123\91\91\107\77\28\87\66\95\102\80\105\96\123\26\38\35\92\88\73")()a("\72\71\121\108")()end;do local a=a[(b._C7O73ZE)]end;return f(c())end)({[17.990491353948315]="box_CSYxmq_s";[176.56653290076707]="OExMbmOlmXmLBdZU2WLAN";[286.3421184634173]="arC0XIwWuEJhFh3Skuut2xPOmm";["Mw2nn5U0UBAxIoNzyO8hRy"]="PGxbSOdQMGrwZ8RL";[35.83537408738632]="LPl8oEKC6YuEo";["k3gVjhSzhxYC1"]="WSLC_RlqkAPol_TzjpvmfYFJ0";[-127.96940422413496]="mPBcmELJ2ESoeTMylA";["delhP"]="a2z_9bZoF8";["fXMMd7Up"]="xvUY94x9yZg1ftduFdWQ";[-219.763087379688]="pyPj9asE";["V7"]="PwBHHDGHtIb1nszaIl7ISUv";["RFnea0CfO3MGwXGzdnW"]="IvAM3XP466uA";[-237.47640263423875]="UU5QSVX5PUJAMkr";[66.92494842218538]="CB0fu7x4sms";["jbuWDIimeCwawwRSzPmNT6XXL3y"]="nyuOFZ0DPIqXSEs";["ITV"]="jGKgC8SDNYc1QZYqyOJyPi";["PEfnaY"]="YcpWT49j9QnelUFT";[-87.49712545648208]="CsO_E5ywHcbyd6Qlf_SgEwm3B";[372.9251640344613]="y3I5cjIsQ7CEqRBUhB2f";[86.97150801792567]="YA3er2FEf";[-156.06633135237792]="kjOxvJGjLILxSXw4oz7VssMXet";[38.83470789683331]="OSHBFNWPx";[-97.87250339481503]="vx27hG9DCy81Qhqru4t";["_Swnm6JuI3JcQ"]="KZC560RgBmfWGKPtzi3dF_";["aNtcJsWPe"]="fLqhyTyzpgBhaJJgEKmb";[-153.06071557915868]="H2LCUb2r8HFHaca";[402.76960449592855]="PHx3UaqOKB4tFsOh";[-188.84877102702433]="VmNqKVR2cFQdPP_VBFl3KsFP";[-150.45216427198721]="ORVYxQZxCa6Ld3j9lr";["F61N4L9lId"]="i46kdTRAJwujAY21mGmc5HkbD";[405.45459005043887]="HR81VGLtqx1tIzsr";[1]=c();[2]=a;[37.71809715384359]="xTVr1sglI";[97.24899485447403]="rUcwCnVDwrO";[-239.37384857189892]="GBQ_fkOa8xcVyzaK8";[-244.09060404396655]="_MSwfgYfQH3Xf9xmLqwkyCzbpkg";[-168.4553599217933]="ugdzPxJG";["SJkdw_XrPm7RPaTdO"]="bCrWKHHfFCDD";[-149.30576321818086]="jXmKFmtKk6L8ovdKlb5LqSSQ2";[133.47749526052957]="y80zWt1ldBXZSQjbOJVm_Cs_t"})
+local function ripple(obj)
+    spawn(function()
+        local Mouse = game.Players.LocalPlayer:GetMouse()
+        local Circle = Instance.new("ImageLabel")
+        Circle.Name = "Circle"
+        Circle.Parent = obj
+        Circle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        Circle.BackgroundTransparency = 1.000
+        Circle.ZIndex = 10
+        Circle.Image = "rbxassetid://266543268"
+        Circle.ImageColor3 = Color3.fromRGB(255, 255, 255)
+        Circle.ImageTransparency = 0.4
+        
+        local NewX, NewY = Mouse.X - Circle.AbsolutePosition.X, Mouse.Y - Circle.AbsolutePosition.Y
+        Circle.Position = UDim2.new(0, NewX, 0, NewY)
+        
+        local Size = 0
+        if obj.AbsoluteSize.X > obj.AbsoluteSize.Y then
+            Size = obj.AbsoluteSize.X * 1.5
+        elseif obj.AbsoluteSize.X < obj.AbsoluteSize.Y then
+            Size = obj.AbsoluteSize.Y * 1.5
+        elseif obj.AbsoluteSize.X == obj.AbsoluteSize.Y then
+            Size = obj.AbsoluteSize.X * 1.5
+        end
+        
+        Circle:TweenSizeAndPosition(
+            UDim2.new(0, Size, 0, Size),
+            UDim2.new(0.5, -Size / 2, 0.5, -Size / 2),
+            "Out",
+            "Quad",
+            0.2,
+            false
+        )
+        
+        for i = 1, 20 do
+            Circle.ImageTransparency = Circle.ImageTransparency + 0.05
+            wait(0.3 / 10)
+        end
+        Circle:Destroy()
+    end)
+end
+
+local function draggable(obj)
+    local UserInputService = game:GetService("UserInputService")
+    local gui = obj
+    local dragging
+    local dragInput
+    local dragStart
+    local startPos
+    
+    local function update(input)
+        local delta = input.Position - dragStart
+        local EndPos = UDim2.new(
+            startPos.X.Scale, 
+            startPos.X.Offset + delta.X,
+            startPos.Y.Scale, 
+            startPos.Y.Offset + delta.Y
+        )
+        local Tween = TweenService:Create(gui, TweenInfo.new(0.2), {Position = EndPos})
+        Tween:Play()
+    end
+    
+    gui.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+            dragging = true
+            dragStart = input.Position
+            startPos = gui.Position
+            
+            input.Changed:Connect(function()
+                if input.UserInputState == Enum.UserInputState.End then
+                    dragging = false
+                end
+            end)
+        end
+    end)
+    
+    gui.InputChanged:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+            dragInput = input
+        end
+    end)
+    
+    UserInputService.InputChanged:Connect(function(input)
+        if input == dragInput and dragging then
+            update(input)
+        end
+    end)
+end
+
+local lib = {}
+
+-- Store the main GUI reference globally to persist through respawns
+if not _G.VenLibInstances then
+    _G.VenLibInstances = {}
+end
+
+function lib:Window(text)
+    local ft = false
+    local vistab = true
+    local mini = false
+    
+    -- Check if we already have a VenLib instance and clean it up
+    if _G.VenLibInstances[text] then
+        _G.VenLibInstances[text]:Destroy()
+    end
+    
+    local VenLib = Instance.new("ScreenGui")
+    local mainframe = Instance.new("Frame")
+    local mainholder = Instance.new("Frame")
+    local containers = Instance.new("Folder")
+    local tabholder = Instance.new("Frame")
+    local tablist = Instance.new("UIListLayout")
+    local top = Instance.new("Frame")
+    local title = Instance.new("TextLabel")
+    local minimize = Instance.new("ImageButton")
+    
+    VenLib.Name = "VenLib"
+    VenLib.Parent = CoreGui -- Parent to CoreGui instead of PlayerGui for persistence
+    VenLib.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    VenLib.ResetOnSpawn = false -- This prevents the GUI from resetting on respawn
+    
+    -- Store reference for persistence
+    _G.VenLibInstances[text] = VenLib
+    
+    mainframe.Name = "mainframe"
+    mainframe.Parent = VenLib
+    mainframe.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+    mainframe.BorderSizePixel = 0
+    mainframe.ClipsDescendants = true
+    mainframe.Position = UDim2.new(0.396874994, 0, 0.372807026, 0)
+    mainframe.Size = UDim2.new(0, 396, 0, 231)
+    draggable(mainframe)
+    
+    mainholder.Name = "mainholder"
+    mainholder.Parent = mainframe
+    mainholder.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+    mainholder.BorderSizePixel = 0
+    mainholder.Position = UDim2.new(0, 0, -0.00381628261, 0)
+    mainholder.Size = UDim2.new(0, 396, 0, 27)
+    
+    containers.Name = "containers"
+    containers.Parent = mainholder
+    
+    tabholder.Name = "tabholder"
+    tabholder.Parent = mainholder
+    tabholder.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+    tabholder.BackgroundTransparency = 1.000
+    tabholder.BorderSizePixel = 0
+    tabholder.Position = UDim2.new(0.023, 0, 1.33703697, 0)
+    tabholder.Size = UDim2.new(0, 377, 0, 21)
+    
+    tablist.Name = "tablist"
+    tablist.Parent = tabholder
+    tablist.FillDirection = Enum.FillDirection.Horizontal
+    tablist.SortOrder = Enum.SortOrder.LayoutOrder
+    
+    top.Name = "top"
+    top.Parent = mainholder
+    top.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+    top.BorderSizePixel = 0
+    top.Position = UDim2.new(0, 0, -0.00381628261, 0)
+    top.Size = UDim2.new(0, 396, 0, 27)
+    
+    minimize.Name = "minimize"
+    minimize.Parent = top
+    minimize.BackgroundTransparency = 1.000
+    minimize.LayoutOrder = 6
+    minimize.Position = UDim2.new(0.931818187, 0, 0.111111112, 0)
+    minimize.Size = UDim2.new(0, 20, 0, 20)
+    minimize.ZIndex = 2
+    minimize.Image = "rbxassetid://3926307971"
+    minimize.ImageRectOffset = Vector2.new(884, 284)
+    minimize.ImageRectSize = Vector2.new(36, 36)
+    
+    title.Name = "title"
+    title.Parent = top
+    title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    title.BackgroundTransparency = 1.000
+    title.BorderSizePixel = 0
+    title.Position = UDim2.new(0.0227272734, 0, 0.0364662446, 0)
+    title.Size = UDim2.new(0, 42, 0, 26)
+    title.Font = Enum.Font.Gotham
+    title.Text = text
+    title.TextColor3 = Color3.fromRGB(255, 255, 255)
+    title.TextSize = 15.000
+    title.TextXAlignment = Enum.TextXAlignment.Left
+    
+    minimize.MouseButton1Click:Connect(function()
+        if mini == false then
+            mainframe:TweenSize(UDim2.new(0, 396, 0, 27), "Out", "Quad", 0.25)
+            mini = not mini
+        else
+            mainframe:TweenSize(UDim2.new(0, 396, 0, 231), "In", "Quad", 0.25)
+            mini = not mini
+        end
+    end)
+    
+    -- ESC key handler to show/hide the UI when menu is open
+    local UserInputService = game:GetService("UserInputService")
+    local GuiService = game:GetService("GuiService")
+    
+    local function onMenuOpened()
+        -- Bring the UI to front when menu opens
+        VenLib.Enabled = true
+        VenLib.DisplayOrder = 10 -- High display order to appear on top
+    end
+    
+    local function onMenuClosed()
+        -- Keep UI visible but you can modify this if you want it to hide with menu
+        VenLib.Enabled = true
+    end
+    
+    -- Connect to menu state changes
+    GuiService.MenuOpened:Connect(onMenuOpened)
+    GuiService.MenuClosed:Connect(onMenuClosed)
+    
+    -- Also handle ESC key directly as backup
+    UserInputService.InputBegan:Connect(function(input, gameProcessed)
+        if input.KeyCode == Enum.KeyCode.Escape and not gameProcessed then
+            if GuiService:GetMenuIsOpen() then
+                onMenuOpened()
+            else
+                onMenuClosed()
+            end
+        end
+    end)
+    
+    -- Handle player respawn/reset
+    local function onCharacterAdded(character)
+        -- Ensure UI stays visible after respawn
+        wait(1) -- Small delay to ensure everything is loaded
+        VenLib.Enabled = true
+    end
+    
+    local player = Players.LocalPlayer
+    if player.Character then
+        onCharacterAdded(player.Character)
+    end
+    player.CharacterAdded:Connect(onCharacterAdded)
+    
+    local tabs = {}
+    
+    function tabs:Tab(title)
+        local tabbtn = Instance.new("TextButton")
+        local containerpadding = Instance.new("UIPadding")
+        local container = Instance.new("ScrollingFrame")
+        local containerlist = Instance.new("UIListLayout")
+        
+        tabbtn.Name = "tabbtn"
+        tabbtn.Parent = tabholder
+        tabbtn.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+        tabbtn.BorderSizePixel = 0
+        tabbtn.BackgroundTransparency = 1
+        tabbtn.AutoButtonColor = false
+        tabbtn.Font = Enum.Font.Gotham
+        tabbtn.Text = title
+        tabbtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+        tabbtn.TextSize = 14.000
+        tabbtn.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+        tabbtn.Size = UDim2.new(0, tabbtn.TextBounds.X + 15, 0, 21)
+        
+        container.Name = "container"
+        container.Parent = containers
+        container.Active = true
+        container.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+        container.BorderSizePixel = 0
+        container.Position = UDim2.new(0.0227272734, 0, 2.11481524, 0)
+        container.Size = UDim2.new(0, 377, 0, 164)
+        container.BottomImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
+        container.CanvasSize = UDim2.new(0, 0, 0, 0)
+        container.ScrollBarThickness = 3
+        container.Visible = vistab
+        container.TopImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
+        
+        containerpadding.Name = "containerpadding"
+        containerpadding.Parent = container
+        containerpadding.PaddingLeft = UDim.new(0, 6)
+        containerpadding.PaddingTop = UDim.new(0, 6)
+        
+        containerlist.Name = "containerlist"
+        containerlist.Parent = container
+        containerlist.SortOrder = Enum.SortOrder.LayoutOrder
+        containerlist.Padding = UDim.new(0, 3)
+        
+        if ft == false then
+            ft = true
+            vistab = false
+            tabbtn.BackgroundTransparency = 0
+        end
+        
+        tabbtn.MouseButton1Click:Connect(function()
+            for i, v in next, containers:GetChildren() do
+                if v.Name == "container" then
+                    v.Visible = false
+                end
+            end
+            for i, v in next, tabholder:GetChildren() do
+                if v.ClassName == "TextButton" then
+                    v.BackgroundTransparency = 1
+                end
+            end
+            tabbtn.BackgroundTransparency = 0
+            container.Visible = true
+        end)
+        
+        local tab = {}
+        
+        function tab:Button(text, callback)
+            callback = callback or function(...) end
+            local button = Instance.new("TextButton")
+            
+            local me = TweenService:Create(
+                button,
+                TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+                {BackgroundColor3 = Color3.fromRGB(49, 49, 49)}
+            )
+            local ml = TweenService:Create(
+                button,
+                TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+                {BackgroundColor3 = Color3.fromRGB(24, 24, 24)}
+            )
+            
+            button.Name = "button"
+            button.Parent = container
+            button.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+            button.BorderSizePixel = 0
+            button.AutoButtonColor = false
+            button.Font = Enum.Font.Gotham
+            button.Text = text
+            button.TextColor3 = Color3.fromRGB(255, 255, 255)
+            button.TextSize = 14.000
+            button.Size = UDim2.new(0, button.TextBounds.X + 15, 0, 27)
+            button.ClipsDescendants = true
+            
+            container.CanvasSize = UDim2.new(0, 0, 0, containerlist.AbsoluteContentSize.Y + 10)
+            
+            button.MouseEnter:Connect(function()
+                me:Play()
+            end)
+            
+            button.MouseLeave:Connect(function()
+                ml:Play()
+            end)
+            
+            button.MouseButton1Click:Connect(function()
+                ripple(button)
+                pcall(callback)
+            end)
+        end
+        
+        function tab:Toggle(text, callback)
+            local toggle = Instance.new("TextButton")
+            local title = Instance.new("TextLabel")
+            local status = Instance.new("Frame")
+            local toggled = false
+            callback = callback or function(...) end
+            
+            toggle.Name = "toggle"
+            toggle.Parent = container
+            toggle.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+            toggle.BorderSizePixel = 0
+            toggle.ClipsDescendants = true
+            toggle.Position = UDim2.new(0.128787875, 0, 0.519480526, 0)
+            toggle.AutoButtonColor = false
+            toggle.Font = Enum.Font.SourceSans
+            toggle.Text = ""
+            toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+            toggle.TextSize = 14.000
+            
+            title.Name = "title"
+            title.Parent = toggle
+            title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            title.BackgroundTransparency = 1.000
+            title.BorderSizePixel = 0
+            title.Position = UDim2.new(0, 40, 0, 0)
+            title.Font = Enum.Font.Gotham
+            title.Text = text
+            title.Size = UDim2.new(0, 20, 1, 0)
+            title.TextColor3 = Color3.fromRGB(255, 255, 255)
+            title.TextSize = 14.000
+            title.TextXAlignment = Enum.TextXAlignment.Left
+            
+            toggle.Size = UDim2.new(0, title.TextBounds.X + 50, 0, 30)
+            
+            status.Name = "status"
+            status.Parent = toggle
+            status.AnchorPoint = Vector2.new(0, 0.5)
+            status.BackgroundColor3 = Color3.fromRGB(255, 49, 49)
+            status.BorderSizePixel = 0
+            status.Position = UDim2.new(0.00505050505, 8, 0.5, 0)
+            status.Size = UDim2.new(0, 20, 0, 20)
+            
+            container.CanvasSize = UDim2.new(0, 0, 0, containerlist.AbsoluteContentSize.Y + 10)
+            
+            local me = TweenService:Create(
+                toggle,
+                TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+                {BackgroundColor3 = Color3.fromRGB(49, 49, 49)}
+            )
+            local ml = TweenService:Create(
+                toggle,
+                TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+                {BackgroundColor3 = Color3.fromRGB(24, 24, 24)}
+            )
+            local truetoggle = TweenService:Create(
+                status,
+                TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+                {BackgroundColor3 = Color3.fromRGB(81, 255, 55)}
+            )
+            local falsetoggle = TweenService:Create(
+                status,
+                TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+                {BackgroundColor3 = Color3.fromRGB(255, 49, 49)}
+            )
+            
+            toggle.MouseEnter:Connect(function()
+                me:Play()
+            end)
+            
+            toggle.MouseLeave:Connect(function()
+                ml:Play()
+            end)
+            
+            toggle.MouseButton1Click:Connect(function()
+                if toggled == false then
+                    truetoggle:Play()
+                    toggled = not toggled
+                else
+                    falsetoggle:Play()
+                    toggled = not toggled
+                end
+                ripple(toggle)
+                callback(toggled)
+            end)
+        end
+        
+        function tab:Slider(text, min, max, start, callback)
+            local inputService = game:GetService("UserInputService")
+            local slider = Instance.new("Frame")
+            local title = Instance.new("TextLabel")
+            local placetoslide = Instance.new("TextButton")
+            local slideframe = Instance.new("Frame")
+            local value = Instance.new("TextLabel")
+            local dragging = false
+            
+            slider.Name = "slider"
+            slider.Parent = container
+            slider.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            slider.BackgroundTransparency = 1.000
+            slider.Position = UDim2.new(0.503712893, 0, 0.239035085, 0)
+            
+            title.Name = "title"
+            title.Parent = slider
+            title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            title.BackgroundTransparency = 1.000
+            title.BorderSizePixel = 0
+            title.Position = UDim2.new(0, 6, 0, 0)
+            title.Size = UDim2.new(0, 23, 1, 0)
+            title.ZIndex = 2
+            title.Font = Enum.Font.Gotham
+            title.Text = text
+            title.TextColor3 = Color3.fromRGB(255, 255, 255)
+            title.TextSize = 14.000
+            title.TextXAlignment = Enum.TextXAlignment.Left
+            
+            slider.Size = UDim2.new(0, title.TextBounds.X + 185, 0, 30)
+            
+            placetoslide.Name = "placetoslide"
+            placetoslide.Parent = slider
+            placetoslide.AnchorPoint = Vector2.new(1, 0.5)
+            placetoslide.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+            placetoslide.BorderSizePixel = 0
+            placetoslide.Position = UDim2.new(1, 0, 0.5, 0)
+            placetoslide.Size = UDim2.new(0, 165, 0, 26)
+            placetoslide.AutoButtonColor = false
+            placetoslide.Text = ""
+            
+            slideframe.Name = "slideframe"
+            slideframe.Parent = placetoslide
+            slideframe.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+            slideframe.BorderSizePixel = 0
+            slideframe.Size = UDim2.new((start or 0) / max, 0, 1, 0)
+            
+            value.Name = "value"
+            value.Parent = placetoslide
+            value.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            value.BackgroundTransparency = 1.000
+            value.BorderSizePixel = 0
+            value.Size = UDim2.new(1, 0, 1, 0)
+            value.Font = Enum.Font.Gotham
+            value.Text = tostring(start and math.floor((start / max) * (max - min) + min) or 0)
+            value.TextColor3 = Color3.fromRGB(255, 255, 255)
+            value.TextSize = 14.000
+            
+            container.CanvasSize = UDim2.new(0, 0, 0, containerlist.AbsoluteContentSize.Y + 10)
+            
+            local function slide(input)
+                local pos = UDim2.new(
+                    math.clamp((input.Position.X - placetoslide.AbsolutePosition.X) / placetoslide.AbsoluteSize.X, 0, 1),
+                    0,
+                    1,
+                    0
+                )
+                slideframe:TweenSize(pos, Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.2, true)
+                local s = math.floor(((pos.X.Scale * max) / max) * (max - min) + min)
+                value.Text = tostring(s)
+                callback(s)
+            end
+            
+            placetoslide.InputBegan:Connect(function(input)
+                if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                    slide(input)
+                    dragging = true
+                end
+            end)
+            
+            placetoslide.InputEnded:Connect(function(input)
+                if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                    dragging = false
+                end
+            end)
+            
+            inputService.InputChanged:Connect(function(input)
+                if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+                    slide(input)
+                end
+            end)
+        end
+        
+        function tab:Dropdown(text, list, callback)
+            list = list or {}
+            local d = false
+            callback = callback or function(...) end
+            
+            local dropdown = Instance.new("TextButton")
+            local title = Instance.new("TextLabel")
+            local arrow = Instance.new("ImageButton")
+            local dropdowncontainer = Instance.new("ScrollingFrame")
+            local dropdownlist = Instance.new("UIListLayout")
+            
+            dropdown.Name = "dropdown"
+            dropdown.Parent = container
+            dropdown.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+            dropdown.BorderSizePixel = 0
+            dropdown.Position = UDim2.new(0.295454532, 0, 0.36796537, 0)
+            dropdown.Size = UDim2.new(0, 200, 0, 30)
+            dropdown.ZIndex = 2
+            dropdown.AutoButtonColor = false
+            dropdown.Font = Enum.Font.SourceSans
+            dropdown.Text = ""
+            dropdown.TextColor3 = Color3.fromRGB(0, 0, 0)
+            dropdown.TextSize = 14.000
+            dropdown.ClipsDescendants = false
+            
+            local t = TweenService:Create(
+                dropdown,
+                TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+                {BackgroundColor3 = Color3.fromRGB(36, 36, 36)}
+            )
+            local nt = TweenService:Create(
+                dropdown,
+                TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+                {BackgroundColor3 = Color3.fromRGB(24, 24, 24)}
+            )
+            local closetween = TweenService:Create(
+                arrow,
+                TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut),
+                {Rotation = 90}
+            )
+            local opentween = TweenService:Create(
+                arrow,
+                TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut),
+                {Rotation = 0}
+            )
+            
+            title.Name = "title"
+            title.Parent = dropdown
+            title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            title.BackgroundTransparency = 1.000
+            title.BorderSizePixel = 0
+            title.Position = UDim2.new(0, 8, 0, 0)
+            title.Size = UDim2.new(0, 23, 1, 0)
+            title.Font = Enum.Font.Gotham
+            title.Text = text
+            title.TextColor3 = Color3.fromRGB(255, 255, 255)
+            title.TextSize = 14.000
+            title.TextXAlignment = Enum.TextXAlignment.Left
+            
+            arrow.Name = "arrow"
+            arrow.Parent = dropdown
+            arrow.BackgroundTransparency = 1.000
+            arrow.LayoutOrder = 11
+            arrow.Position = UDim2.new(0.870000005, 0, 0.166666657, 0)
+            arrow.Size = UDim2.new(0, 20, 0, 20)
+            arrow.ZIndex = 2
+            arrow.Image = "rbxassetid://3926305904"
+            arrow.ImageRectOffset = Vector2.new(564, 284)
+            arrow.ImageRectSize = Vector2.new(36, 36)
+            arrow.Rotation = 90
+            
+            dropdowncontainer.Name = "dropdowncontainer"
+            dropdowncontainer.Parent = dropdown
+            dropdowncontainer.Active = true
+            dropdowncontainer.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+            dropdowncontainer.BorderSizePixel = 0
+            dropdowncontainer.Position = UDim2.new(0, 0, 0.999998987, 0)
+            dropdowncontainer.Size = UDim2.new(0, 146, 0, 0)
+            dropdowncontainer.BottomImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
+            dropdowncontainer.CanvasSize = UDim2.new(0, 0, 0, 0)
+            dropdowncontainer.ScrollBarThickness = 3
+            dropdowncontainer.Visible = false
+            dropdowncontainer.TopImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
+            
+            dropdownlist.Name = "dropdownlist"
+            dropdownlist.Parent = dropdowncontainer
+            dropdownlist.SortOrder = Enum.SortOrder.LayoutOrder
+            
+            dropdown.MouseButton1Click:Connect(function()
+                if d == false then
+                    d = not d
+                    opentween:Play()
+                    dropdowncontainer.Visible = true
+                    t:Play()
+                    dropdowncontainer:TweenSize(UDim2.new(0, 146, 0, 92), "In", "Quad", 0.25)
+                    container.CanvasSize = UDim2.new(0, 0, 0, containerlist.AbsoluteContentSize.Y + 105)
+                else
+                    d = not d
+                    closetween:Play()
+                    nt:Play()
+                    dropdowncontainer:TweenSize(UDim2.new(0, 146, 0, 0), "Out", "Quad", 0.25)
+                    container.CanvasSize = UDim2.new(0, 0, 0, containerlist.AbsoluteContentSize.Y + 10)
+                    wait(0.3)
+                    dropdowncontainer.Visible = false
+                end
+            end)
+            
+            container.CanvasSize = UDim2.new(0, 0, 0, containerlist.AbsoluteContentSize.Y + 10)
+            
+            for i, v in next, list do
+                local option = Instance.new("TextButton")
+                option.Name = "option"
+                option.Parent = dropdowncontainer
+                option.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+                option.BorderSizePixel = 0
+                option.Size = UDim2.new(0, 146, 0, 27)
+                option.AutoButtonColor = false
+                option.Font = Enum.Font.Gotham
+                option.TextColor3 = Color3.fromRGB(255, 255, 255)
+                option.TextSize = 14.000
+                option.Text = v
+                
+                local me = TweenService:Create(
+                    option,
+                    TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+                    {BackgroundColor3 = Color3.fromRGB(49, 49, 49)}
+                )
+                local ml = TweenService:Create(
+                    option,
+                    TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+                    {BackgroundColor3 = Color3.fromRGB(36, 36, 36)}
+                )
+                
+                option.MouseEnter:Connect(function()
+                    me:Play()
+                end)
+                
+                option.MouseLeave:Connect(function()
+                    ml:Play()
+                end)
+                
+                option.MouseButton1Click:Connect(function()
+                    title.Text = v
+                    d = not d
+                    closetween:Play()
+                    nt:Play()
+                    dropdowncontainer:TweenSize(UDim2.new(0, 146, 0, 0), "Out", "Quad", 0.25)
+                    container.CanvasSize = UDim2.new(0, 0, 0, containerlist.AbsoluteContentSize.Y + 10)
+                    wait(0.3)
+                    dropdowncontainer.Visible = false
+                end)
+                
+                dropdowncontainer.CanvasSize = UDim2.new(0, 0, 0, dropdownlist.AbsoluteContentSize.Y)
+            end
+        end
+        
+        function tab:Textbox(text, disapeer, callback)
+            callback = callback or function(...) end
+            local textbox = Instance.new("Frame")
+            local title = Instance.new("TextLabel")
+            local textboxframe = Instance.new("Frame")
+            local textboxmain = Instance.new("TextBox")
+            
+            textbox.Name = "textbox"
+            textbox.Parent = container
+            textbox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            textbox.BackgroundTransparency = 1.000
+            textbox.Position = UDim2.new(0.503712893, 0, 0.239035085, 0)
+            
+            title.Name = "title"
+            title.Parent = textbox
+            title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            title.BackgroundTransparency = 1.000
+            title.BorderSizePixel = 0
+            title.Position = UDim2.new(0, 6, 0, 0)
+            title.Size = UDim2.new(0, 23, 1, 0)
+            title.ZIndex = 2
+            title.Font = Enum.Font.Gotham
+            title.Text = text
+            title.TextColor3 = Color3.fromRGB(255, 255, 255)
+            title.TextSize = 14.000
+            title.TextXAlignment = Enum.TextXAlignment.Left
+            
+            textbox.Size = UDim2.new(0, title.TextBounds.X + 185, 0, 30)
+            
+            textboxframe.Name = "textboxframe"
+            textboxframe.Parent = textbox
+            textboxframe.AnchorPoint = Vector2.new(1, 0.5)
+            textboxframe.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+            textboxframe.BorderSizePixel = 0
+            textboxframe.Position = UDim2.new(1, 0, 0.5, 0)
+            textboxframe.Size = UDim2.new(0, 165, 0, 26)
+            
+            textboxmain.Name = "textboxmain"
+            textboxmain.Parent = textboxframe
+            textboxmain.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+            textboxmain.BorderSizePixel = 0
+            textboxmain.Size = UDim2.new(0, 165, 0, 26)
+            textboxmain.Font = Enum.Font.Gotham
+            textboxmain.Text = ""
+            textboxmain.TextColor3 = Color3.fromRGB(255, 255, 255)
+            textboxmain.TextSize = 14.000
+            
+            container.CanvasSize = UDim2.new(0, 0, 0, containerlist.AbsoluteContentSize.Y + 10)
+            
+            textboxmain.FocusLost:Connect(function(ep)
+                if ep then
+                    if #textboxmain.Text > 0 then
+                        pcall(callback, textboxmain.Text)
+                        if disapeer then
+                            textboxmain.Text = ""
+                        end
+                    end
+                end
+            end)
+        end
+        
+        return tab
+    end
+    
+    return tabs
+end
+
+return lib
